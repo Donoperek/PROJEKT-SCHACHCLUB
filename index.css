@@ -1,0 +1,331 @@
+/* ==================== Basis ==================== */
+
+body {
+  margin: 0;
+  background-color: #2f2e2b;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ==================== Barrierefreiheit ==================== */
+
+/* Der Sprunglink bleibt unsichtbar, ist aber für Tastatur-Nutzer erreichbar. */
+.skip-link {
+  position: absolute;
+  top: 11rem;
+  left: -9999px;
+  z-index: 20;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.skip-link:focus {
+  left: 1rem;
+}
+
+/* Visuell ausgeblendete Überschriften behalten ihre semantische Funktion. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* ==================== Header und Logo ==================== */
+
+.site-header {
+  position: sticky; /* KANN MAN EINSTELLEN, ob header fix ist oder nicht */
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background-color: #262522;
+}
+
+.logo img {
+  width: 200px;
+  height: auto;
+}
+
+.site-header h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 3rem;
+}
+
+/* Die beiden Textteile bleiben direkt nebeneinander. */
+.titel-schachclub {
+  color: #ffffff;
+}
+
+.titel-dhbw {
+  color: #a61b1b;
+  font-family: Caponic, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* ==================== Navigation ==================== */
+
+.site-menu {
+  position: relative;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.site-menu summary {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.Menü {
+  background-color: #8b0000;
+}
+
+.site-menu summary::-webkit-details-marker {
+  display: none;
+}
+
+.site-menu summary::after {
+  content: " ▾";
+}
+
+.site-menu[open] summary::after {
+  content: " ▴";
+}
+
+/* Das geöffnete Menü wird unterhalb der Schaltfläche eingeblendet. */
+.site-menu nav {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 1;
+  min-width: 190px;
+  border-radius: 4px;
+  background-color: #a61b1b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+}
+
+.nav-list a {
+  display: block;
+  padding: 8px 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-list a:hover {
+  background-color: #650000;
+}
+
+/* Ein klar sichtbarer Fokusring für Tastaturbedienung. */
+.nav-list a:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+  background-color: #ffffff;
+  color: #8b0000;
+}
+
+/* ==================== Hinweisbanner ==================== */
+
+.projekt-hinweis {
+  padding: 0.75rem 1rem;
+  background-color: #f5d547;
+  color: #262522;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ==================== Startbild ==================== */
+
+.startbild {
+  width: 100%;
+}
+
+.startbild img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ==================== Kategorien ==================== */
+
+.interessen-bereich {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 3rem 1rem 4rem;
+  text-align: center;
+}
+
+.interessen-bereich h2 {
+  margin: 2.5rem 0 1.25rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.kategorien {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.kategorie {
+  display: grid;
+  min-height: 150px;
+  justify-items: center;
+  align-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  background-color: #262522;
+  color: #ffffff;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.kategorie-icon {
+  display: grid;
+  width: 6rem;
+  height: 6rem;
+  place-items: center;
+  border-radius: 50%;
+  background-color: #3a3936;
+  color: #ffffff;
+  font-size: 2.5rem;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.kategorie-icon:hover,
+.kategorie-icon:focus-visible {
+  background-color: #1c1b19;
+}
+
+.kategorie-icon:focus-visible,
+.anmeldung-link:focus-visible {
+  outline: 3px solid #f5d547;
+  outline-offset: 4px;
+}
+
+.anmeldung-link {
+  display: block;
+  width: 35%;
+  margin-top: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 1.25rem 2rem;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #8b0000;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.anmeldung-link:hover {
+  background-color: #650000;
+}
+
+/* ==================== Footer ==================== */
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  background-color: #262522;
+  color: #ffffff;
+  font-size: 0.875rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: #ff6b6b;
+}
+
+.footer-links a:focus-visible {
+  outline: 2px solid #ff6b6b;
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .logo img {
+    width: 140px;
+  }
+
+  .site-header h1 {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: center;
+    font-size: clamp(1.5rem, 8vw, 2.25rem);
+    text-align: center;
+  }
+
+  .site-menu {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .site-menu nav {
+    max-width: calc(100vw - 2rem);
+  }
+
+  .kategorien {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

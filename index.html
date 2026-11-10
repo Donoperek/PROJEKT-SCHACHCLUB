@@ -6,7 +6,7 @@
     <!-- Responsives Design für Handynutzer-->
     <title>DHBW Schachclub</title>
     <!-- Titel der Website im Browser-Tab -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <!-- link zum stylesheet css-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <!-- Einbindung der Google Fonts für die Schriftart Montserrat -->
@@ -37,8 +37,48 @@
         </nav>
     </details>
 </header>
+<!-- Hinweis zum fiktiven Projekt -->
+<aside class="projekt-hinweis" aria-label="Hinweis zum Projekt">
+    Hinweis: Dies ist ein fiktives Websitenprojekt im Rahmen der Wirtschaftsinformatik-Vorlesung an der DHBW Heidenheim.
+</aside>
+<!-- Startbild -->
+<section class="startbild" aria-labelledby="startbild-titel">
+    <h2 id="startbild-titel" class="visually-hidden">DHBW Schachclub</h2>
+    <img src="bilder/indexbild.avif" alt="Schachfiguren auf einem Schachbrett">
+</section>
 <main id="inhalt">
-    <!-- Hauptinhalt der Seite -->
+    <section class="interessen-bereich" aria-labelledby="interessen-titel">
+        <nav class="kategorien" aria-label="Bereiche des Schachclubs">
+            <article class="kategorie">
+                <a class="kategorie-icon" href="ueber-uns.html" aria-label="Mehr über uns erfahren">♟</a>
+                <span>Über uns</span>
+            </article>
+            <article class="kategorie">
+                <a class="kategorie-icon" href="termine.html" aria-label="Termine ansehen">◷</a>
+                <span>Termine</span>
+            </article>
+            <article class="kategorie">
+                <a class="kategorie-icon" href="rangliste.html" aria-label="Rangliste ansehen">♜</a>
+                <span>Rangliste</span>
+            </article>
+            <article class="kategorie">
+                <a class="kategorie-icon" href="lernen.html" aria-label="Schach lernen">♘</a>
+                <span>Lernen</span>
+            </article>
+        </nav>
+        <h2 id="interessen-titel">Interesse?</h2>
+        <a class="anmeldung-link" href="example.html">Melde dich</a>
+    </section>
 </main>
+<footer class="site-footer">
+    <p>© 2026 Projektarbeit | Adrian, Jeremy, Nicolas & Nils | DHBW Heidenheim</p>
+    <nav aria-label="Footer-Navigation">
+        <ul class="footer-links">
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</footer>
 </body>
 </html>
