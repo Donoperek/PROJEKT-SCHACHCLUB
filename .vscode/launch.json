@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Open in Brave",
+            "type": "pwa-chrome",
+            "request": "launch",
+            "runtimeExecutable": "${env:LOCALAPPDATA}\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
+            "file": "${workspaceFolder}\\index.html"
+        },
+        {
+            "name": "Open in default browser",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "cmd.exe /c start \"\" \"${workspaceFolder}\\index.html\"",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
