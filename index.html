@@ -6,7 +6,7 @@
     <!-- Responsives Design für Handynutzer-->
     <title>DHBW Schachclub</title>
     <!-- Titel der Website im Browser-Tab -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- link zum stylesheet css-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <!-- Einbindung der Google Fonts für die Schriftart Montserrat -->
@@ -17,10 +17,10 @@
 <header class="site-header">
     <!-- Logo und Navigation -->
     <a href="index.html" class="logo">
-        <img src="bilder/logo_transparent_weiß.png" alt="DHBW Schachclub Logo">
+        <img src="assets/icons/logo_transparent_weiß.png" alt="DHBW Schachclub Logo">
     </a> 
     <!-- Gemeinsame Überschrift: DHBW rot und Schachclub weiß ohne großen Abstand -->
-    <h1><span class="titel-schachclub"> Schachclub♘</span><span class="titel-dhbw">DHBW</span></h1>
+    <h1><span class="titel-schachclub">Schachclub</span><span class="titel-dhbw">DHBW</span></h1>
     <!-- Menü mit Links zu den weiteren Seiten der Website -->
     <details class="site-menu">     
         <!-- Schaltfläche zum Öffnen und Schließen des Menüs -->
@@ -28,55 +28,60 @@
         <!-- Platzhalter-Links für die zukünftigen Seiten -->
         <nav aria-label="Hauptnavigation">
             <ul class="nav-list">
-                <li><a href="ueber-uns.html">Über uns</a></li>
-                <li><a href="trainingszeiten.html">Trainingszeiten</a></li>
-                <li><a href="turniere.html">Turniere</a></li>
-                <li><a href="mannschaften.html">Mannschaften</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="pages/ueber-uns.html">Über uns</a></li>
+                <li><a href="pages/rangliste.html">Rangliste</a></li>
+                <li><a href="pages/termine.html">Termine</a></li>
+                <li><a href="pages/schachlernen.html">Schach lernen</a></li>
+                <li><a href="pages/anmeldung.html">Anmeldung</a></li>
             </ul>
         </nav>
     </details>
 </header>
 <!-- Hinweis zum fiktiven Projekt -->
 <aside class="projekt-hinweis" aria-label="Hinweis zum Projekt">
-    Hinweis: Dies ist ein fiktives Websitenprojekt im Rahmen der Wirtschaftsinformatik-Vorlesung an der DHBW Heidenheim.
+    Hinweis: Dies ist ein fiktives Websiteprojekt im Rahmen der Wirtschaftsinformatik-Vorlesung an der DHBW Heidenheim.
 </aside>
 <!-- Startbild -->
 <section class="startbild" aria-labelledby="startbild-titel">
     <h2 id="startbild-titel" class="visually-hidden">DHBW Schachclub</h2>
-    <img src="bilder/indexbild.avif" alt="Schachfiguren auf einem Schachbrett">
+    <img src="assets/img/indexbild.avif" alt="Schachfiguren auf einem Schachbrett">
 </section>
 <main id="inhalt">
     <section class="interessen-bereich" aria-labelledby="interessen-titel">
+        <div class="schachclub-einleitung">
+            <h2>Unser Schachclub</h2>
+            <p>Wir sind der Schachclub der DHBW Heidenheim und verbinden Studierende, die gemeinsam Schach spielen, lernen und sich messen möchten. Bei uns treffen Anfängerinnen und Anfänger auf erfahrene Spielerinnen und Spieler. Gemeinsam fördern wir Konzentration, Strategie und den Spaß am Spiel. Alle Studierenden sind willkommen, unabhängig von ihrem Spielniveau.</p>
+        </div>
+        <h2 id="interessen-titel">Unsere Bereiche</h2>
         <nav class="kategorien" aria-label="Bereiche des Schachclubs">
             <article class="kategorie">
-                <a class="kategorie-icon" href="ueber-uns.html" aria-label="Mehr über uns erfahren">♟</a>
+                <a class="kategorie-icon" href="pages/ueber-uns.html" aria-label="Mehr über uns erfahren">♟</a>
                 <span>Über uns</span>
             </article>
             <article class="kategorie">
-                <a class="kategorie-icon" href="termine.html" aria-label="Termine ansehen">◷</a>
+                <a class="kategorie-icon" href="pages/termine.html" aria-label="Termine ansehen">◷</a>
                 <span>Termine</span>
             </article>
             <article class="kategorie">
-                <a class="kategorie-icon" href="rangliste.html" aria-label="Rangliste ansehen">♜</a>
+                <a class="kategorie-icon" href="pages/rangliste.html" aria-label="Rangliste ansehen">♜</a>
                 <span>Rangliste</span>
             </article>
             <article class="kategorie">
-                <a class="kategorie-icon" href="lernen.html" aria-label="Schach lernen">♘</a>
+                <a class="kategorie-icon" href="pages/schachlernen.html" aria-label="Schach lernen">♘</a>
                 <span>Lernen</span>
             </article>
         </nav>
-        <h2 id="interessen-titel">Interesse?</h2>
-        <a class="anmeldung-link" href="example.html">Melde dich</a>
+        <h2 id="anmeldung-titel">Interesse?</h2>
+        <a class="anmeldung-link" href="pages/anmeldung.html">Melde dich</a>
     </section>
 </main>
 <footer class="site-footer">
     <p>© 2026 Projektarbeit | Adrian, Jeremy, Nicolas & Nils | DHBW Heidenheim</p>
     <nav aria-label="Footer-Navigation">
         <ul class="footer-links">
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="pages/impressum.html">Impressum</a></li>
+            <li><a href="pages/datenschutz.html">Datenschutz</a></li>
+            <li><a href="pages/kontakt.html">Kontakt</a></li>
         </ul>
     </nav>
 </footer>

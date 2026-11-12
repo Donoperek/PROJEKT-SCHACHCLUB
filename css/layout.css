@@ -1,71 +1,45 @@
-/* ==================== Basis ==================== */
-
-body {
-  margin: 0;
-  background-color: #2f2e2b;
-  color: #ffffff;
-  font-family: "Montserrat", sans-serif;
-}
-
-/* ==================== Barrierefreiheit ==================== */
-
-.skip-link {
-  position: absolute;
-  top: 11rem;
-  left: -9999px;
-  z-index: 20;
-  padding: 0.75rem 1rem;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.skip-link:focus {
-  left: 1rem;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-}
-
 /* ==================== Header und Logo ==================== */
 
 .site-header {
-  position: sticky;
-  top: 0;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  background-color: #262522;
+  background-color: var(--farbe-header);
 }
 
 .logo img {
+  display: block;
   width: 200px;
+  max-width: 100%;
   height: auto;
 }
 
+.logo:focus-visible {
+  outline: 3px solid var(--farbe-rot-hover);
+  outline-offset: 4px;
+}
+
 .site-header h1 {
+  display: flex;
+  gap: 0.25em;
+  transform: translateX(-2rem);
   margin: 0;
-  color: #ffffff;
-  font-size: 3rem;
+  color: var(--farbe-weiss);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1;
 }
 
 .titel-schachclub {
-  color: #ffffff;
+  color: var(--farbe-weiss);
 }
 
 .titel-dhbw {
-  color: #a61b1b;
-  font-family: Caponic, sans-serif;
+  color: var(--farbe-rot-hell);
+  font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
   font-weight: bold;
 }
@@ -74,20 +48,20 @@ body {
 
 .site-menu {
   position: relative;
-  color: #ffffff;
+  color: var(--farbe-weiss);
   font-weight: bold;
 }
 
 .site-menu summary {
   padding: 0.75rem 1rem;
-  border: 1px solid #ffffff;
+  border: 1px solid var(--farbe-weiss);
   border-radius: 4px;
   cursor: pointer;
   list-style: none;
 }
 
 .Menü {
-  background-color: #8b0000;
+  background-color: var(--farbe-rot);
 }
 
 .site-menu summary::-webkit-details-marker {
@@ -109,7 +83,7 @@ body {
   z-index: 1;
   min-width: 190px;
   border-radius: 4px;
-  background-color: #a61b1b;
+  background-color: var(--farbe-rot-hell);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
@@ -122,27 +96,27 @@ body {
 .nav-list a {
   display: block;
   padding: 8px 16px;
-  color: #ffffff;
+  color: var(--farbe-weiss);
   text-decoration: none;
 }
 
 .nav-list a:hover {
-  background-color: #650000;
+  background-color: var(--farbe-rot-dunkel);
 }
 
 .nav-list a:focus-visible {
-  outline: 3px solid #ffffff;
+  outline: 3px solid var(--farbe-weiss);
   outline-offset: 2px;
-  background-color: #ffffff;
-  color: #8b0000;
+  background-color: var(--farbe-weiss);
+  color: var(--farbe-rot);
 }
 
 /* ==================== Projekt-Hinweis ==================== */
 
 .projekt-hinweis {
   padding: 0.75rem 1rem;
-  background-color: #f5d547;
-  color: #262522;
+  background-color: var(--farbe-gelb);
+  color: var(--farbe-header);
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.5;
@@ -157,8 +131,8 @@ body {
   justify-content: space-between;
   gap: 1.5rem;
   padding: 1.5rem 2rem;
-  background-color: #262522;
-  color: #ffffff;
+  background-color: var(--farbe-header);
+  color: var(--farbe-weiss);
   font-size: 0.875rem;
 }
 
@@ -175,23 +149,23 @@ body {
 }
 
 .footer-links a {
-  color: #ffffff;
+  color: var(--farbe-weiss);
   text-decoration: none;
 }
 
 .footer-links a:hover,
 .footer-links a:focus-visible {
-  color: #ff6b6b;
+  color: var(--farbe-rot-hover);
 }
 
 .footer-links a:focus-visible {
-  outline: 2px solid #ff6b6b;
+  outline: 2px solid var(--farbe-rot-hover);
   outline-offset: 4px;
 }
 
 /* ==================== Responsive Design ==================== */
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .site-header {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -207,6 +181,7 @@ body {
     grid-column: 1 / -1;
     grid-row: 2;
     justify-self: center;
+    transform: none;
     font-size: clamp(1.5rem, 8vw, 2.25rem);
     text-align: center;
   }

@@ -1,0 +1,59 @@
+/* ==================== Basis ==================== */
+
+:root {
+  --farbe-hintergrund: #2f2e2b;
+  --farbe-header: #262522;
+  --farbe-rot: #8b0000;
+  --farbe-rot-hell: #a61b1b;
+  --farbe-rot-dunkel: #650000;
+  --farbe-rot-hover: #ff6b6b;
+  --farbe-rot-kontrast: #ff6b6b;
+  --farbe-gelb: #f5d547;
+  --farbe-weiss: #ffffff;
+  --farbe-schwarz: #000000;
+  --farbe-icon: #3a3936;
+  --farbe-icon-dunkel: #1c1b19;
+  --farbe-rangliste-zeile: #242321;
+  --farbe-rangliste-zeile-gerade: #292725;
+  --farbe-rangliste-text-grau: #9aa8b8;
+  --farbe-rangliste-avatar: #1b263b;
+  --farbe-rangliste-rahmen: #2d3b55;
+  --farbe-rangliste-gruen: #10b981;
+}
+
+body {
+  margin: 0;
+  background-color: var(--farbe-hintergrund);
+  color: var(--farbe-weiss);
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ==================== Barrierefreiheit ==================== */
+
+/* Der Sprunglink bleibt unsichtbar, ist aber für Tastatur-Nutzer erreichbar. */
+.skip-link {
+  position: absolute;
+  top: 11rem;
+  left: -9999px;
+  z-index: 20;
+  padding: 0.75rem 1rem;
+  background-color: var(--farbe-weiss);
+  color: var(--farbe-schwarz);
+}
+
+.skip-link:focus {
+  left: 1rem;
+}
+
+/* Visuell ausgeblendete Überschriften behalten ihre semantische Funktion. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}

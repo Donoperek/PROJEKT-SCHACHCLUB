@@ -1,0 +1,300 @@
+/* ==================== Startbild ==================== */
+
+.startbild {
+  width: 100%;
+}
+
+.startbild img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ==================== Index-Inhalt ==================== */
+
+.interessen-bereich {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+  text-align: center;
+}
+
+.schachclub-einleitung {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.schachclub-einleitung h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.schachclub-einleitung p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.interessen-bereich h2 {
+  margin: 2.5rem 0 1.25rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+/* ==================== Rangliste ==================== */
+
+.rangliste-seite {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 3rem 1rem 4rem;
+}
+
+.rangliste-kopf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 2rem;
+  padding-bottom: 1.5rem;
+}
+
+/* CSS-only Switch zwischen Standard- und Blitz-Rangliste */
+.ranglisten-switch {
+  display: inline-flex;
+  gap: 0.35rem;
+  border-radius: 0.5rem;
+  padding: 0.35rem;
+  background-color: var(--farbe-icon-dunkel);
+}
+
+.switch-option {
+  padding: 0.55rem 1.15rem;
+  border-radius: 0.5rem;
+  color: #d7e0ed;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.switch-option:hover {
+  background-color: var(--farbe-icon);
+  color: var(--farbe-weiss);
+}
+
+#modus-standard:checked ~ .rangliste-kopf label[for="modus-standard"],
+#modus-blitz:checked ~ .rangliste-kopf label[for="modus-blitz"] {
+  background-color: var(--farbe-rot);
+  color: var(--farbe-weiss);
+}
+
+#modus-standard:focus-visible ~ .rangliste-kopf label[for="modus-standard"],
+#modus-blitz:focus-visible ~ .rangliste-kopf label[for="modus-blitz"] {
+  outline: 3px solid var(--farbe-gelb);
+  outline-offset: 2px;
+}
+
+.rangliste-panel {
+  display: none;
+}
+
+#modus-standard:checked ~ .rangliste-panel-standard,
+#modus-blitz:checked ~ .rangliste-panel-blitz {
+  display: block;
+}
+
+.rangliste-kicker {
+  margin: 0 0 0.35rem;
+  color: var(--farbe-rot-kontrast);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.rangliste-kopf h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.rangliste-untertitel {
+  margin: 0.5rem 0 0;
+  color: #b7b7b7;
+}
+
+.ranglisten-tabelle {
+  overflow: hidden;
+  border: 0;
+  border-radius: 1rem;
+  background-color: var(--farbe-rangliste-zeile);
+}
+
+.ranglisten-tabelle-kopf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--farbe-icon-dunkel);
+}
+
+.ranglisten-tabelle-kopf h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.ranglisten-fussnote {
+  color: var(--farbe-rangliste-text-grau);
+  font-size: 0.85rem;
+}
+
+.tabelle-scroll {
+  overflow-x: auto;
+}
+
+.ranglisten-tabelle table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.ranglisten-tabelle th,
+.ranglisten-tabelle td {
+  padding: 1rem 1.25rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.ranglisten-tabelle th {
+  color: var(--farbe-rangliste-text-grau);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ranglisten-tabelle tbody tr:nth-child(even) {
+  background-color: var(--farbe-rangliste-zeile-gerade);
+}
+
+.ranglisten-tabelle tbody tr:nth-child(odd):not(.ranglisten-sieger) {
+  background-color: var(--farbe-rangliste-zeile);
+}
+
+.platz {
+  display: inline-grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-right: 0.6rem;
+  place-items: center;
+  border-radius: 0.5rem;
+  background-color: #182237;
+  color: #9aa8bd;
+  font-weight: 700;
+}
+
+.platz-gold {
+  background-color: #f5a900;
+  color: #182237;
+}
+
+.platz-silber {
+  background-color: #d7e0ed;
+  color: #182237;
+}
+
+.platz-bronze {
+  background-color: #d96512;
+  color: #ffffff;
+}
+
+.trend {
+  color: var(--farbe-rangliste-text-grau);
+  font-size: 0.75rem;
+}
+
+.trend-auf {
+  color: var(--farbe-rangliste-gruen);
+}
+
+.trend-ab {
+  color: #ff6b6b;
+}
+
+.spieler {
+  vertical-align: middle;
+}
+
+.spieler > span:last-child {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.spieler-avatar {
+  display: inline-grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-right: 0.75rem;
+  place-items: center;
+  border: 1px solid var(--farbe-rangliste-rahmen);
+  border-radius: 50%;
+  background-color: var(--farbe-rangliste-avatar);
+  color: #ffffff;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.spieler-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.spieler strong {
+  display: block;
+}
+
+.kurs {
+  padding: 0.45rem 0.65rem;
+  border: 1px solid #2d3b55;
+  border-radius: 0.4rem;
+  color: #91a0b7;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.rating {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.bilanz strong {
+  color: var(--farbe-rangliste-gruen);
+}
+
+.bilanz b {
+  color: #ff6b6b;
+}
+
+.form {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.form i {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background-color: #64748b;
+}
+
+.form .form-sieg {
+  background-color: var(--farbe-rangliste-gruen);
+}
+
+.form .form-niederlage {
+  background-color: #ff6b6b;
+}
+
+.ranglisten-fussnote {
+  margin: 1.25rem 0 0;
+}

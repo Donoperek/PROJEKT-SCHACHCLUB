@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rangliste | DHBW Schachclub</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+    <header class="site-header">
+        <a href="../index.html" class="logo">
+            <img src="../assets/icons/logo_transparent_weiß.png" alt="DHBW Schachclub Logo">
+        </a>
+
+        <h1>
+            <span class="titel-schachclub">Schachclub</span>
+            <span class="titel-dhbw">DHBW</span>
+        </h1>
+
+        <details class="site-menu">
+            <summary class="Menü">Menü</summary>
+
+            <nav aria-label="Hauptnavigation">
+                <ul class="nav-list">
+                    <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="rangliste.html">Rangliste</a></li>
+                    <li><a href="termine.html">Termine</a></li>
+                    <li><a href="schachlernen.html">Schach lernen</a></li>
+                    <li><a href="anmeldung.html">Anmeldung</a></li>
+                </ul>
+            </nav>
+        </details>
+    </header>
+
+    <aside class="projekt-hinweis" aria-label="Hinweis zum Projekt">
+        Hinweis: Dies ist ein fiktives Websiteprojekt im Rahmen der
+        Wirtschaftsinformatik-Vorlesung an der DHBW Heidenheim.
+    </aside>
+
+    <main id="inhalt">
+        <section class="rangliste-seite" aria-labelledby="rangliste-titel">
+            <!-- CSS-only Modus-Umschalter zwischen Standard- und Blitz-Rangliste -->
+            <input type="radio" name="rangliste-modus" id="modus-standard" class="visually-hidden" checked>
+            <input type="radio" name="rangliste-modus" id="modus-blitz" class="visually-hidden">
+
+            <div class="rangliste-kopf">
+                <div>
+                    <p class="rangliste-kicker">DHBW Schachclub</p>
+                    <h2 id="rangliste-titel">Offizielle Hochschul-Rangliste</h2>
+                    <p class="rangliste-untertitel">Standard- und Blitz-Elo für Studierende</p>
+                </div>
+
+                <div class="ranglisten-switch" role="group" aria-label="Ranglisten-Modus wählen">
+                    <label for="modus-standard" class="switch-option">Standard</label>
+                    <label for="modus-blitz" class="switch-option">Blitz</label>
+                </div>
+            </div>
+
+            <div class="rangliste-panel rangliste-panel-standard">
+                <div class="ranglisten-tabelle">
+                    <div class="ranglisten-tabelle-kopf">
+                        <h3>Standard-Elo-Rangliste</h3>
+                    </div>
+                    <div class="tabelle-scroll">
+                        <table>
+                            <caption class="visually-hidden">Standard-Elo-Rangliste des DHBW Schachclubs</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Spieler / Student</th>
+                                    <th scope="col">Kurs</th>
+                                    <th scope="col">Rating</th>
+                                    <th scope="col">W - D - L</th>
+                                    <th scope="col">Form (5)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="ranglisten-sieger">
+                                    <td><span class="platz platz-gold">1</span><span class="trend trend-auf">▲1</span></td>
+                                    <td class="spieler">
+                                        <span class="spieler-avatar" aria-hidden="true">BJ</span>
+                                        <span><strong>Big J</strong></span>
+                                    </td>
+                                    <td><span class="kurs">WWI26</span></td>
+                                    <td class="rating">2048</td>
+                                    <td class="bilanz"><strong>14</strong> / 2 / <b>1</b></td>
+                                    <td><span class="form"><i class="form-sieg"></i><i class="form-sieg"></i><i></i><i class="form-sieg"></i><i class="form-sieg"></i></span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="platz platz-silber">2</span><span class="trend trend-ab">▼1</span></td>
+                                    <td class="spieler">
+                                        <span class="spieler-avatar" aria-hidden="true">SL</span>
+                                        <span><strong></strong></span>
+                                    </td>
+                                    <td><span class="kurs">WII22</span></td>
+                                    <td class="rating">2015</td>
+                                    <td class="bilanz"><strong>12</strong> / 4 / <b>2</b></td>
+                                    <td><span class="form"><i class="form-sieg"></i><i></i><i class="form-sieg"></i><i class="form-niederlage"></i><i class="form-sieg"></i></span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="platz platz-bronze">3</span><span class="trend">–</span></td>
+                                    <td class="spieler">
+                                        <span class="spieler-avatar" aria-hidden="true">EB</span>
+                                        <span><strong>Elias Bauer</strong></span>
+                                    </td>
+                                    <td><span class="kurs">MB24</span></td>
+                                    <td class="rating">1890</td>
+                                    <td class="bilanz"><strong>9</strong> / 5 / <b>3</b></td>
+                                    <td><span class="form"><i></i><i class="form-sieg"></i><i class="form-sieg"></i><i></i><i></i></span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="platz">4</span><span class="trend trend-auf">▲2</span></td>
+                                    <td class="spieler">
+                                        <span class="spieler-avatar" aria-hidden="true">NA</span>
+                                        <span><strong>Noah Albrecht</strong></span>
+                                    </td>
+                                    <td><span class="kurs">TINF23</span></td>
+                                    <td class="rating">1765</td>
+                                    <td class="bilanz"><strong>8</strong> / 1 / <b>4</b></td>
+                                    <td><span class="form"><i class="form-sieg"></i><i class="form-sieg"></i><i class="form-niederlage"></i><i class="form-sieg"></i><i class="form-sieg"></i></span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="platz">5</span><span class="trend trend-ab">▼1</span></td>
+                                    <td class="spieler">
+                                        <span class="spieler-avatar" aria-hidden="true">LW</span>
+                                        <span><strong>Lena Weber</strong></span>
+                                    </td>
+                                    <td><span class="kurs">BWL23</span></td>
+                                    <td class="rating">1710</td>
+                                    <td class="bilanz"><strong>7</strong> / 3 / <b>5</b></td>
+                                    <td><span class="form"><i class="form-niederlage"></i><i class="form-sieg"></i><i></i><i class="form-niederlage"></i><i class="form-sieg"></i></span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="platz">6</span><span class="trend">–</span></td>
+                                    <td class="spieler">
+                                        <span class="spieler-avatar" aria-hidden="true">FK</span>
+                                        <span><strong>Felix Kramer</strong></span>
+                                    </td>
+                                    <td><span class="kurs">ETEC22</span></td>
+                                    <td class="rating">1645</td>
+                                    <td class="bilanz"><strong>5</strong> / 2 / <b>4</b></td>
+                                    <td><span class="form"><i class="form-sieg"></i><i></i><i class="form-niederlage"></i><i class="form-sieg"></i><i class="form-niederlage"></i></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p class="ranglisten-fussnote">Modus: Standard-Elo-Rating (10 Min. + 5 Sek.).</p>
+            </div>
+
+            <div class="rangliste-panel rangliste-panel-blitz">
+                <div class="ranglisten-tabelle">
+                    <div class="ranglisten-tabelle-kopf">
+                        <h3>Blitz-Elo-Rangliste</h3>
+                    </div>
+                    <div class="tabelle-scroll">
+                        <table>
+                            <caption class="visually-hidden">Blitz-Elo-Rangliste des DHBW Schachclubs</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Spieler / Student</th>
+                                    <th scope="col">Kurs</th>
+                                    <th scope="col">Rating</th>
+                                    <th scope="col">W - D - L</th>
+                                    <th scope="col">Form (5)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="ranglisten-sieger">
+                                    <td><span class="platz platz-gold">1</span><span class="trend trend-auf">▲2</span></td>
+                                    <td class="spieler">
+                                        <span class="spieler-avatar" aria-hidden="true">NA</span>
+                                        <span><strong>Noah Albrecht</strong></span>
+                                    </td>
+                                    <td><span class="kurs">TINF23</span></td>
+                                    <td class="rating">2110</td>
+                                    <td class="bilanz"><strong>24</strong> / 3 / <b>5</b></td>
+                                    <td><span class="form"><i class="form-sieg"></i><i class="form-sieg"></i><i class="form-sieg"></i><i class="form-sieg"></i><i></i></span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="platz platz-silber">2</span><span class="trend trend-ab">▼1</span></td>
+                                    <td class="spieler">
+                                        <span class="spieler-avatar" aria-hidden="true">BJ</span>
+                                        <span><strong>Big J</strong></span>
+                                    </td>
+                                    <td><span class="kurs">WWI26</span></td>
+                                    <td class="rating">2065</td>
+                                    <td class="bilanz"><strong>21</strong> / 4 / <b>6</b></td>
+                                    <td><span class="form"><i class="form-sieg"></i><i class="form-niederlage"></i><i class="form-sieg"></i><i class="form-sieg"></i><i class="form-sieg"></i></span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="platz platz-bronze">3</span><span class="trend trend-auf">▲1</span></td>
+                                    <td class="spieler">
+                                        <span class="spieler-avatar" aria-hidden="true">LW</span>
+                                        <span><strong>Lena Weber</strong></span>
+                                    </td>
+                                    <td><span class="kurs">BWL23</span></td>
+                                    <td class="rating">1940</td>
+                                    <td class="bilanz"><strong>18</strong> / 2 / <b>8</b></td>
+                                    <td><span class="form"><i class="form-sieg"></i><i class="form-sieg"></i><i></i><i class="form-niederlage"></i><i class="form-sieg"></i></span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="platz">4</span><span class="trend">–</span></td>
+                                    <td class="spieler">
+                                        <span class="spieler-avatar" aria-hidden="true">EB</span>
+                                        <span><strong>Elias Bauer</strong></span>
+                                    </td>
+                                    <td><span class="kurs">MB24</span></td>
+                                    <td class="rating">1855</td>
+                                    <td class="bilanz"><strong>15</strong> / 6 / <b>9</b></td>
+                                    <td><span class="form"><i></i><i class="form-sieg"></i><i class="form-niederlage"></i><i class="form-sieg"></i><i></i></span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="platz">5</span><span class="trend trend-auf">▲1</span></td>
+                                    <td class="spieler">
+                                        <span class="spieler-avatar" aria-hidden="true">FK</span>
+                                        <span><strong>Felix Kramer</strong></span>
+                                    </td>
+                                    <td><span class="kurs">ETEC22</span></td>
+                                    <td class="rating">1790</td>
+                                    <td class="bilanz"><strong>14</strong> / 3 / <b>10</b></td>
+                                    <td><span class="form"><i class="form-niederlage"></i><i class="form-sieg"></i><i class="form-sieg"></i><i></i><i class="form-sieg"></i></span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="platz">6</span><span class="trend trend-ab">▼2</span></td>
+                                    <td class="spieler">
+                                        <span class="spieler-avatar" aria-hidden="true">SL</span>
+                                        <span><strong>Svenja Lindner</strong></span>
+                                    </td>
+                                    <td><span class="kurs">WII22</span></td>
+                                    <td class="rating">1725</td>
+                                    <td class="bilanz"><strong>11</strong> / 5 / <b>11</b></td>
+                                    <td><span class="form"><i class="form-niederlage"></i><i></i><i class="form-sieg"></i><i class="form-niederlage"></i><i></i></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p class="ranglisten-fussnote">Modus: Blitz-Elo-Rating (3 Min. + 2 Sek.).</p>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>© 2026 Projektarbeit | Adrian, Jeremy, Nicolas &amp; Nils | DHBW Heidenheim</p>
+
+        <nav aria-label="Footer-Navigation">
+            <ul class="footer-links">
+                <li><a href="impressum.html">Impressum</a></li>
+                <li><a href="datenschutz.html">Datenschutz</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
