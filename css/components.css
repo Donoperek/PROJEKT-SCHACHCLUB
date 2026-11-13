@@ -41,7 +41,7 @@
 
 .kategorie-icon:focus-visible,
 .anmeldung-link:focus-visible {
-  outline: 3px solid var(--farbe-gelb);
+  outline: 3px solid var(--farbe-rot-hover);
   outline-offset: 4px;
 }
 

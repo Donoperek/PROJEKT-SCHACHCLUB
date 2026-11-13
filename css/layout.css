@@ -60,6 +60,12 @@
   list-style: none;
 }
 
+.site-menu summary:focus-visible {
+  outline: 3px solid var(--farbe-rot-hover);
+  outline-offset: 4px;
+  background-color: var(--farbe-rot-dunkel);
+}
+
 .Menü {
   background-color: var(--farbe-rot);
 }

@@ -72,7 +72,7 @@
                     <details class="faq-eintrag">
                         <summary>Wann und wo treffen wir uns?</summary>
                         <p>
-                            Immer im Anschluss an die Vorlesungen in Hörsaal 214. Alle aktuellen
+                            Immer im Anschluss an die Vorlesungen in Hörsaal 214, um 18:00 Uhr. Alle aktuellen
                             Termine findest du auf der <a href="termine.html">Termin-Übersicht</a>.
                         </p>
                     </details>
@@ -85,23 +85,24 @@
 
             <!-- 2. Bereich: Schnuppern? -->
             <section class="anmeldung-block schnuppern-karte" aria-labelledby="schnuppern-titel">
+                <input type="checkbox" id="schnupper-toggle" class="visually-hidden">
                 <h3 id="schnuppern-titel" class="anmeldung-abschnitt-titel">Schnuppern?</h3>
                 <p>
-                    Komm jederzeit ohne Anmeldung vorbei – einfach mittwochs ab 18:00 Uhr in Hörsaal 214.
+                    Komm jederzeit ohne Anmeldung vorbei, einfach mittwochs ab 18:00 Uhr in Hörsaal 214.
                     Egal ob Anfänger oder Vereinsspieler: Bretter und Uhren sind vor Ort, und du kannst
                     direkt eine lockere Partie gegen andere DHBW-Studierende spielen.
                 </p>
                 <div class="schnuppern-aktionen">
-                    <a href="#schnupper-bestaetigung" class="schnuppern-button">Ich komme zum Schnuppern (freiwillig)</a>
-                    <span class="schnuppern-hinweis-klein">Optional – hilft uns nur beim Bretter-Aufbau.</span>
+                    <label for="schnupper-toggle" class="schnuppern-button">Ich komme zum Schnuppern (freiwillig)</label>
+                    <span class="schnuppern-hinweis-klein"></span>
                 </div>
 
-                <div id="schnupper-bestaetigung" class="anmeldung-bestaetigung" role="status">
+                <div class="anmeldung-bestaetigung schnupper-bestaetigung" role="status">
                     <p>
                         <strong>Stark, wir freuen uns auf dich!</strong> Du musst nichts weiter ausfüllen –
                         komm einfach mittwochs ab 18:00 Uhr in Hörsaal 214 vorbei.
                     </p>
-                    <a href="#schnuppern-titel" class="bestaetigung-schliessen">Hinweis schließen</a>
+                    <label for="schnupper-toggle" class="bestaetigung-schliessen">Hinweis schließen</label>
                 </div>
             </section>
 
@@ -117,24 +118,24 @@
                 <form class="anmelde-formular" action="#anmeldung-bestaetigung" method="get">
                     <div class="formular-zeile">
                         <div class="formular-feld">
-                            <label for="anmeldung-name">Name &amp; Kurs (z. B. Max Mustermann, WWI24)</label>
+                            <label for="anmeldung-name">Name &amp; Kurs</label>
                             <input
                                 type="text"
                                 id="anmeldung-name"
                                 name="name"
-                                placeholder="z. B. Lena Weber – BWL23"
+                                placeholder="z. B. Max Mustermann, WWI26"
                                 autocomplete="name"
                                 required
                             >
                         </div>
 
                         <div class="formular-feld">
-                            <label for="anmeldung-email">DHBW-E-Mail-Adresse</label>
+                            <label for="anmeldung-email">DHBW E-Mail Adresse</label>
                             <input
                                 type="email"
                                 id="anmeldung-email"
                                 name="email"
-                                placeholder="vorname.nachname@student.dhbw-heidenheim.de"
+                                placeholder="MustermannM.wwi26@student.dhbw-heidenheim.de"
                                 autocomplete="email"
                                 required
                             >
@@ -144,7 +145,7 @@
                     <div class="formular-feld">
                         <label for="anmeldung-zweck">Wofür möchtest du dich eintragen?</label>
                         <select id="anmeldung-zweck" name="zweck">
-                            <option value="mitgliedschaft">Feste Mitgliedschaft &amp; Aufnahme in den Verteiler</option>
+                            <option value="mitgliedschaft">Feste Mitgliedschaft</option>
                             <option value="turnier">Interne Turniere &amp; Events (Blitzturnier / Semester-Opening / Standort-Match)</option>
                             <option value="hochschulliga">Mannschaftsspielbetrieb / Hochschulliga</option>
                             <option value="platzplanung">Fester Brettplatz für einen Termin (max. 16 Bretter in Hörsaal 214)</option>
@@ -173,7 +174,7 @@
 
                     <div class="formular-zeile">
                         <div class="formular-feld">
-                            <label for="anmeldung-rating">Spielstärke (Elo oder Online-Rating)</label>
+                            <label for="anmeldung-rating">Spielstärke (Online-Rating)</label>
                             <input
                                 type="text"
                                 id="anmeldung-rating"

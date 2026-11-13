@@ -21,13 +21,24 @@
   --farbe-rangliste-avatar: #1b263b;
   --farbe-rangliste-rahmen: #2d3b55;
   --farbe-rangliste-gruen: #10b981;
+  --farbe-platz-hintergrund: #182237;
+  --farbe-gold: #f5a900;
+  --farbe-silber: #d7e0ed;
+  --farbe-bronze: #d96512;
+  --farbe-form-remis: #64748b;
+
+  --font-main: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 body {
   margin: 0;
   background-color: var(--farbe-hintergrund);
   color: var(--farbe-weiss);
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-main);
 }
 
 /* ==================== Barrierefreiheit ==================== */
@@ -35,16 +46,25 @@ body {
 /* Der Sprunglink bleibt unsichtbar, ist aber für Tastatur-Nutzer erreichbar. */
 .skip-link {
   position: absolute;
-  top: 11rem;
   left: -9999px;
-  z-index: 20;
-  padding: 0.75rem 1rem;
-  background-color: var(--farbe-weiss);
-  color: var(--farbe-schwarz);
+  padding: 0.7rem 1rem;
+  background-color: var(--farbe-rot);
+  color: var(--farbe-weiss);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
 }
 
 .skip-link:focus {
-  left: 1rem;
+  position: static;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.skip-link:focus-visible {
+  outline: 2px solid var(--farbe-weiss);
+  outline-offset: -4px;
 }
 
 /* Visuell ausgeblendete Überschriften behalten ihre semantische Funktion. */

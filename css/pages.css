@@ -15,7 +15,7 @@
 .interessen-bereich {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 1.5rem 1rem 4rem;
+  padding: 1rem 1rem 4rem;
   text-align: center;
 }
 
@@ -34,7 +34,7 @@
   line-height: 1.6;
 }
 
-.interessen-bereich h2 {
+.interessen-bereich > h2 {
   margin: 2.5rem 0 1.25rem;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
 }
@@ -88,7 +88,7 @@
 
 #modus-standard:focus-visible ~ .rangliste-kopf label[for="modus-standard"],
 #modus-blitz:focus-visible ~ .rangliste-kopf label[for="modus-blitz"] {
-  outline: 3px solid var(--farbe-gelb);
+  outline: 3px solid var(--farbe-rot-kontrast);
   outline-offset: 2px;
 }
 
@@ -101,7 +101,8 @@
   display: block;
 }
 
-.rangliste-kicker {
+.rangliste-kicker,
+.anmeldung-kicker {
   margin: 0 0 0.35rem;
   color: var(--farbe-rot-kontrast);
   font-size: 0.85rem;
@@ -117,7 +118,7 @@
 
 .rangliste-untertitel {
   margin: 0.5rem 0 0;
-  color: #b7b7b7;
+  color: var(--farbe-text-gedaempft);
 }
 
 .ranglisten-tabelle {
@@ -142,6 +143,7 @@
 }
 
 .ranglisten-fussnote {
+  margin: 1.25rem 0 0;
   color: var(--farbe-rangliste-text-grau);
   font-size: 0.85rem;
 }
@@ -186,24 +188,24 @@
   margin-right: 0.6rem;
   place-items: center;
   border-radius: 0.5rem;
-  background-color: #182237;
-  color: #9aa8bd;
+  background-color: var(--farbe-platz-hintergrund);
+  color: var(--farbe-rangliste-text-grau);
   font-weight: 700;
 }
 
 .platz-gold {
-  background-color: #f5a900;
-  color: #182237;
+  background-color: var(--farbe-gold);
+  color: var(--farbe-platz-hintergrund);
 }
 
 .platz-silber {
-  background-color: #d7e0ed;
-  color: #182237;
+  background-color: var(--farbe-silber);
+  color: var(--farbe-platz-hintergrund);
 }
 
 .platz-bronze {
-  background-color: #d96512;
-  color: #ffffff;
+  background-color: var(--farbe-bronze);
+  color: var(--farbe-weiss);
 }
 
 .trend {
@@ -216,7 +218,7 @@
 }
 
 .trend-ab {
-  color: #ff6b6b;
+  color: var(--farbe-rot-kontrast);
 }
 
 .spieler {
@@ -237,7 +239,7 @@
   border: 1px solid var(--farbe-rangliste-rahmen);
   border-radius: 50%;
   background-color: var(--farbe-rangliste-avatar);
-  color: #ffffff;
+  color: var(--farbe-weiss);
   font-weight: 700;
   vertical-align: middle;
 }
@@ -255,9 +257,9 @@
 
 .kurs {
   padding: 0.45rem 0.65rem;
-  border: 1px solid #2d3b55;
+  border: 1px solid var(--farbe-rangliste-rahmen);
   border-radius: 0.4rem;
-  color: #91a0b7;
+  color: var(--farbe-rangliste-text-grau);
   font-size: 0.75rem;
   font-weight: 600;
 }
@@ -272,7 +274,7 @@
 }
 
 .bilanz b {
-  color: #ff6b6b;
+  color: var(--farbe-rot-kontrast);
 }
 
 .form {
@@ -284,7 +286,7 @@
   width: 0.65rem;
   height: 0.65rem;
   border-radius: 50%;
-  background-color: #64748b;
+  background-color: var(--farbe-form-remis);
 }
 
 .form .form-sieg {
@@ -292,11 +294,7 @@
 }
 
 .form .form-niederlage {
-  background-color: #ff6b6b;
-}
-
-.ranglisten-fussnote {
-  margin: 1.25rem 0 0;
+  background-color: var(--farbe-rot-kontrast);
 }
 
 /* ==================== Anmeldung ==================== */
@@ -316,11 +314,6 @@
 
 .anmeldung-kicker {
   margin: 0;
-  color: var(--farbe-rot-kontrast);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 .anmeldung-abschnitt-titel {
@@ -341,8 +334,7 @@
 }
 
 .anmeldung-hinweistext a,
-.faq-eintrag a,
-.schnuppern-link {
+.faq-eintrag a {
   color: var(--farbe-rot-kontrast);
   font-weight: 600;
   text-underline-offset: 3px;
@@ -367,7 +359,7 @@
 }
 
 .faq-eintrag summary:focus-visible {
-  outline: 3px solid var(--farbe-weiss);
+  outline: 3px solid var(--farbe-rot-kontrast);
   outline-offset: 4px;
   border-radius: 4px;
 }
@@ -391,10 +383,6 @@
   line-height: 1.6;
 }
 
-.schnuppern-link {
-  justify-self: start;
-}
-
 .schnuppern-aktionen {
   display: flex;
   flex-wrap: wrap;
@@ -410,7 +398,17 @@
   color: var(--farbe-weiss);
   font-weight: 600;
   text-decoration: none;
+  cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#schnupper-toggle:checked ~ .schnupper-bestaetigung {
+  display: grid;
+}
+
+#schnupper-toggle:focus-visible ~ .schnuppern-aktionen .schnuppern-button {
+  outline: 3px solid var(--farbe-rot-kontrast);
+  outline-offset: 3px;
 }
 
 .schnuppern-button:hover {
@@ -419,7 +417,7 @@
 }
 
 .schnuppern-button:focus-visible {
-  outline: 3px solid var(--farbe-weiss);
+  outline: 3px solid var(--farbe-rot-kontrast);
   outline-offset: 3px;
 }
 
@@ -465,15 +463,14 @@
 }
 
 .checkbox-label input[type="checkbox"]:focus-visible {
-  outline: 3px solid var(--farbe-weiss);
+  outline: 3px solid var(--farbe-rot-kontrast);
   outline-offset: 2px;
 }
 
-.schnuppern-link:focus-visible,
 .anmeldung-hinweistext a:focus-visible,
 .faq-eintrag a:focus-visible,
 .bestaetigung-schliessen:focus-visible {
-  outline: 3px solid var(--farbe-weiss);
+  outline: 3px solid var(--farbe-rot-kontrast);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -546,7 +543,7 @@
 }
 
 .anmelde-button:focus-visible {
-  outline: 3px solid var(--farbe-weiss);
+  outline: 3px solid var(--farbe-rot-kontrast);
   outline-offset: 3px;
 }
 
@@ -573,6 +570,7 @@
   justify-self: start;
   color: var(--farbe-rot-kontrast);
   font-weight: 600;
+  cursor: pointer;
 }
 
 @media (max-width: 650px) {
