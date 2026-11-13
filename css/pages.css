@@ -68,7 +68,7 @@
 .switch-option {
   padding: 0.55rem 1.15rem;
   border-radius: 0.5rem;
-  color: #d7e0ed;
+  color: var(--farbe-text-hellgrau);
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
@@ -297,4 +297,1256 @@
 
 .ranglisten-fussnote {
   margin: 1.25rem 0 0;
+}
+
+/* ==================== Anmeldung ==================== */
+
+.anmeldung-seite {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem 1rem 4rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.anmeldung-block {
+  display: grid;
+  gap: 1rem;
+}
+
+.anmeldung-kicker {
+  margin: 0;
+  color: var(--farbe-rot-kontrast);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.anmeldung-abschnitt-titel {
+  margin: 0;
+  font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+}
+
+.anmeldung-unterstrichen {
+  margin: 0;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+}
+
+.anmeldung-untertitel,
+.anmeldung-hinweistext {
+  margin: 0;
+  color: var(--farbe-text-hellgrau);
+  line-height: 1.6;
+}
+
+.anmeldung-hinweistext a,
+.faq-eintrag a,
+.schnuppern-link {
+  color: var(--farbe-rot-kontrast);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+/* FAQ Akkordeon (CSS-only über details/summary) */
+.faq-liste {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faq-eintrag {
+  border-radius: 0.75rem;
+  background-color: var(--farbe-rangliste-zeile);
+  padding: 0.9rem 1.15rem;
+}
+
+.faq-eintrag summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style-position: inside;
+}
+
+.faq-eintrag summary:focus-visible {
+  outline: 3px solid var(--farbe-weiss);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.faq-eintrag p {
+  margin: 0.75rem 0 0.25rem;
+  color: var(--farbe-text-hellgrau);
+  line-height: 1.6;
+}
+
+/* Schnuppern-Box */
+.schnuppern-karte {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--farbe-icon-dunkel);
+}
+
+.schnuppern-karte p {
+  margin: 0;
+  color: var(--farbe-text-hellgrau);
+  line-height: 1.6;
+}
+
+.schnuppern-link {
+  justify-self: start;
+}
+
+.schnuppern-aktionen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+}
+
+.schnuppern-button {
+  display: inline-block;
+  padding: 0.7rem 1.25rem;
+  border: 2px solid var(--farbe-rot);
+  border-radius: 0.5rem;
+  color: var(--farbe-weiss);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.schnuppern-button:hover {
+  background-color: var(--farbe-rot);
+  border-color: var(--farbe-rot-hell);
+}
+
+.schnuppern-button:focus-visible {
+  outline: 3px solid var(--farbe-weiss);
+  outline-offset: 3px;
+}
+
+.schnuppern-hinweis-klein {
+  color: var(--farbe-text-gedaempft);
+  font-size: 0.85rem;
+}
+
+.formular-gruppen-label {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--farbe-weiss);
+}
+
+.formular-fieldset {
+  padding: 0.95rem 1.1rem;
+  border: 1px solid var(--farbe-icon);
+  border-radius: 0.6rem;
+  background-color: var(--farbe-icon-dunkel);
+}
+
+.checkbox-gruppe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.5rem;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: var(--farbe-text-hellgrau);
+  font-size: 0.95rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--farbe-rot);
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"]:focus-visible {
+  outline: 3px solid var(--farbe-weiss);
+  outline-offset: 2px;
+}
+
+.schnuppern-link:focus-visible,
+.anmeldung-hinweistext a:focus-visible,
+.faq-eintrag a:focus-visible,
+.bestaetigung-schliessen:focus-visible {
+  outline: 3px solid var(--farbe-weiss);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Anmelde-Formular */
+.anmelde-formular {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.formular-zeile {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.formular-feld {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.formular-feld label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--farbe-weiss);
+}
+
+.formular-feld input,
+.formular-feld select,
+.formular-feld textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.95rem 1.1rem;
+  border: 1px solid var(--farbe-icon);
+  border-radius: 0.6rem;
+  background-color: var(--farbe-icon-dunkel);
+  color: var(--farbe-weiss);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.formular-feld input::placeholder,
+.formular-feld textarea::placeholder {
+  color: var(--farbe-text-gedaempft);
+}
+
+.formular-feld input:focus-visible,
+.formular-feld select:focus-visible,
+.formular-feld textarea:focus-visible {
+  outline: none;
+  border-color: var(--farbe-rot-kontrast);
+}
+
+.anmelde-button {
+  justify-self: start;
+  padding: 0.95rem 2rem;
+  border: 0;
+  border-radius: 0.6rem;
+  background-color: var(--farbe-rot);
+  color: var(--farbe-weiss);
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.anmelde-button:hover {
+  background-color: var(--farbe-rot-hell);
+}
+
+.anmelde-button:focus-visible {
+  outline: 3px solid var(--farbe-weiss);
+  outline-offset: 3px;
+}
+
+/* CSS-only Hinweisbox über :target */
+.anmeldung-bestaetigung {
+  display: none;
+  padding: 1.15rem 1.35rem;
+  border-radius: 0.75rem;
+  background-color: var(--farbe-icon-dunkel);
+  border: 2px solid var(--farbe-rot);
+  gap: 0.75rem;
+}
+
+.anmeldung-bestaetigung:target {
+  display: grid;
+}
+
+.anmeldung-bestaetigung p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.bestaetigung-schliessen {
+  justify-self: start;
+  color: var(--farbe-rot-kontrast);
+  font-weight: 600;
+}
+
+@media (max-width: 650px) {
+  .formular-zeile {
+    grid-template-columns: 1fr;
+  }
+
+  .anmelde-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ==================== Gemeinsame Unterseiten-Köpfe ==================== */
+
+.ueber-uns-kopf,
+.termine-kopf,
+.recht-kopf,
+.kontakt-kopf,
+.lernen-kopf {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.ueber-uns-titel,
+.termine-titel,
+.recht-titel,
+.kontakt-titel,
+.lernen-titel {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.25rem);
+}
+
+.ueber-uns-einleitung,
+.termine-einleitung,
+.recht-einleitung,
+.kontakt-untertitel,
+.lernen-einleitung {
+  margin: 0.25rem 0 0;
+  max-width: 72ch;
+  color: var(--farbe-text-hellgrau);
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+.ueber-uns-link:focus-visible,
+.termin-link:focus-visible,
+.recht-link:focus-visible,
+.team-mail:focus-visible {
+  outline: 2px solid var(--farbe-rot-kontrast);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ==================== Über uns ==================== */
+
+.ueber-uns-seite {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 3rem 1rem 4rem;
+  display: grid;
+  gap: 3rem;
+}
+
+.ueber-uns-reihe {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 2rem 2.5rem;
+}
+
+.ueber-uns-bild {
+  margin: 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: var(--farbe-icon-dunkel);
+}
+
+.ueber-uns-bild img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 320px;
+  object-fit: cover;
+}
+
+.ueber-uns-placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 240px;
+  padding: 2rem;
+  box-sizing: border-box;
+  border: 2px dashed var(--farbe-icon);
+  color: var(--farbe-text-gedaempft);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.ueber-uns-text {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.ueber-uns-text h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  color: var(--farbe-weiss);
+}
+
+.ueber-uns-text p {
+  margin: 0;
+  color: var(--farbe-text-hellgrau);
+  line-height: 1.65;
+}
+
+.ueber-uns-link {
+  justify-self: start;
+  color: var(--farbe-rot-kontrast);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .ueber-uns-reihe {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  /* Auf schmalen Bildschirmen immer zuerst das Bild, dann der Text */
+  .ueber-uns-reihe-umgekehrt .ueber-uns-bild {
+    order: -1;
+  }
+}
+
+/* ==================== Termine ==================== */
+
+.termine-seite {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3rem 1rem 4rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.termine-raster {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.termin-karte {
+  display: grid;
+  grid-template-columns: 5.75rem minmax(0, 1fr);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: var(--farbe-rangliste-zeile);
+}
+
+.termin-datum {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 0.2rem;
+  padding: 1rem 0.65rem;
+  background-color: var(--farbe-rot);
+  color: var(--farbe-weiss);
+  text-align: center;
+}
+
+.termin-datum time {
+  display: grid;
+  justify-items: center;
+  line-height: 1.1;
+}
+
+.datum-tag {
+  font-size: 1.85rem;
+  font-weight: 700;
+}
+
+.datum-monat {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.datum-wochentag {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--farbe-text-hellgrau);
+}
+
+.termin-inhalt {
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+  padding: 1.25rem 1.35rem;
+}
+
+.termin-inhalt h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--farbe-weiss);
+}
+
+.termin-meta {
+  margin: 0;
+  color: var(--farbe-rot-kontrast);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.termin-inhalt p:not(.termin-meta) {
+  margin: 0;
+  color: var(--farbe-text-hellgrau);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.termin-link {
+  justify-self: start;
+  margin-top: 0.25rem;
+  color: var(--farbe-rot-kontrast);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+/* Trennlinie & Weitere Termine */
+.weitere-termine {
+  padding-top: 2rem;
+  border-top: 2px solid var(--farbe-icon);
+  display: grid;
+  gap: 1.25rem;
+}
+
+.weitere-termine h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 3vw, 1.55rem);
+  color: var(--farbe-weiss);
+}
+
+.termin-praxis-hinweis {
+  margin: 0;
+  color: var(--farbe-text-hellgrau);
+  line-height: 1.6;
+}
+
+.weitere-termine-liste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.weiterer-termin-eintrag {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 1.25rem;
+  padding: 0.95rem 1.2rem;
+  border-radius: 0.6rem;
+  background-color: var(--farbe-icon-dunkel);
+}
+
+.weiteres-datum {
+  min-width: 9.5rem;
+  color: var(--farbe-rot-kontrast);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.weiterer-titel {
+  color: var(--farbe-text-hellgrau);
+  line-height: 1.5;
+}
+
+@media (max-width: 820px) {
+  .termine-raster {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 440px) {
+  .termin-karte {
+    grid-template-columns: 1fr;
+  }
+
+  .termin-datum {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.75rem 1.1rem;
+  }
+
+  .termin-datum time {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+
+  .datum-tag {
+    font-size: 1.35rem;
+  }
+}
+
+/* ==================== Datenschutz & Impressum ==================== */
+
+.recht-seite {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 3rem 1rem 4rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.recht-hinweis {
+  padding: 1.25rem 1.4rem;
+  border-radius: 0.75rem;
+  background-color: var(--farbe-icon-dunkel);
+  color: var(--farbe-text-hellgrau);
+  line-height: 1.6;
+}
+
+.recht-hinweis p {
+  margin: 0;
+}
+
+.recht-liste {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.recht-karte {
+  padding: 1.4rem 1.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--farbe-rangliste-zeile);
+  display: grid;
+  gap: 0.65rem;
+}
+
+.recht-karte h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--farbe-weiss);
+}
+
+.recht-karte p,
+.recht-karte address {
+  margin: 0;
+  font-style: normal;
+  color: var(--farbe-text-hellgrau);
+  line-height: 1.65;
+}
+
+.recht-karte ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--farbe-text-hellgrau);
+  line-height: 1.65;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.recht-link {
+  color: var(--farbe-rot-kontrast);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+/* ==================== Kontakt ==================== */
+
+.kontakt-seite {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3rem 1rem 4rem;
+  display: grid;
+  gap: 3rem;
+}
+
+.kontakt-abschnitt-titel {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.3rem, 3vw, 1.65rem);
+  color: var(--farbe-weiss);
+}
+
+.team-raster {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.team-karte {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  background-color: var(--farbe-rangliste-zeile);
+}
+
+.team-bild {
+  margin: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 0.65rem;
+  overflow: hidden;
+  background-color: var(--farbe-icon-dunkel);
+}
+
+.team-bild img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.team-info {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.team-info h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--farbe-weiss);
+}
+
+.team-rolle {
+  margin: 0;
+  color: var(--farbe-rot-kontrast);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.team-beschreibung {
+  margin: 0;
+  color: var(--farbe-text-hellgrau);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.team-mail {
+  justify-self: start;
+  margin-top: 0.2rem;
+  color: var(--farbe-text-hellgrau);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.team-mail:hover {
+  color: var(--farbe-rot-kontrast);
+}
+
+.kontakt-unten {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.kontakt-info-box {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--farbe-icon-dunkel);
+  display: grid;
+  gap: 1rem;
+}
+
+.kontakt-info-box h3,
+.kontakt-formular-box h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: var(--farbe-weiss);
+}
+
+.kontakt-datenliste {
+  margin: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.kontakt-datenliste dt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--farbe-rot-kontrast);
+}
+
+.kontakt-datenliste dd {
+  margin: 0.2rem 0 0;
+  color: var(--farbe-text-hellgrau);
+  line-height: 1.55;
+}
+
+.kontakt-formular-box {
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--farbe-rangliste-zeile);
+  display: grid;
+  gap: 1.15rem;
+}
+
+@media (max-width: 860px) {
+  .team-raster,
+  .kontakt-unten {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-karte {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .team-bild {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* ==================== Schach lernen ==================== */
+
+.lernen-seite {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 3rem 1rem 4rem;
+  display: grid;
+  gap: 3rem;
+}
+
+.lernen-abschnitt-titel {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.3rem, 3vw, 1.65rem);
+  color: var(--farbe-weiss);
+}
+
+.figuren-buehne {
+  display: grid;
+  grid-template-columns: minmax(280px, 440px) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.brett-spalte {
+  display: grid;
+  gap: 0.9rem;
+}
+
+/* 8x8 CSS-Grid Schachbrett (ohne Bilder) */
+.schachbrett {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 3px solid var(--farbe-icon-dunkel);
+  border-radius: 0.65rem;
+  overflow: hidden;
+  user-select: none;
+}
+
+.brett-feld {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+}
+
+.feld-hell {
+  background-color: var(--farbe-text-hellgrau);
+}
+
+.feld-dunkel {
+  background-color: var(--farbe-icon);
+}
+
+.start-figur,
+.mitte-figur,
+.schlag-ziel {
+  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  line-height: 1;
+}
+
+.figur-weiss {
+  color: var(--farbe-weiss);
+  text-shadow: 0 1px 2px var(--farbe-schwarz), 0 0 2px var(--farbe-schwarz);
+}
+
+.figur-schwarz,
+.ziel-gegner {
+  color: var(--farbe-schwarz);
+  text-shadow: 0 0 2px var(--farbe-weiss);
+}
+
+.start-figur {
+  display: none;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.start-figur:hover {
+  background-color: rgba(139, 0, 0, 0.35);
+}
+
+#figur-start:checked ~ .figuren-buehne .start-figur {
+  display: grid;
+}
+
+.mitte-figur,
+.zug-punkt,
+.schlag-ziel {
+  display: none;
+}
+
+/* Mittelpunkt d4 markieren, sobald eine einzelne Figur gewählt ist */
+#figur-koenig:checked ~ .figuren-buehne .feld-mitte,
+#figur-dame:checked ~ .figuren-buehne .feld-mitte,
+#figur-turm:checked ~ .figuren-buehne .feld-mitte,
+#figur-laeufer:checked ~ .figuren-buehne .feld-mitte,
+#figur-springer:checked ~ .figuren-buehne .feld-mitte,
+#figur-bauer:checked ~ .figuren-buehne .feld-mitte {
+  background-color: var(--farbe-rot);
+}
+
+#figur-koenig:checked ~ .figuren-buehne .ist-koenig,
+#figur-dame:checked ~ .figuren-buehne .ist-dame,
+#figur-turm:checked ~ .figuren-buehne .ist-turm,
+#figur-laeufer:checked ~ .figuren-buehne .ist-laeufer,
+#figur-springer:checked ~ .figuren-buehne .ist-springer,
+#figur-bauer:checked ~ .figuren-buehne .ist-bauer {
+  display: grid;
+}
+
+/* Zugfeld-Punkt */
+.zug-punkt {
+  width: 34%;
+  height: 34%;
+  border-radius: 50%;
+  background-color: var(--farbe-rot);
+  box-shadow: 0 0 0 2px var(--farbe-weiss);
+}
+
+#figur-turm:checked ~ .figuren-buehne .zug-ortho .zug-punkt,
+#figur-laeufer:checked ~ .figuren-buehne .zug-diag .zug-punkt,
+#figur-dame:checked ~ .figuren-buehne .zug-ortho .zug-punkt,
+#figur-dame:checked ~ .figuren-buehne .zug-diag .zug-punkt,
+#figur-koenig:checked ~ .figuren-buehne .zug-koenig .zug-punkt,
+#figur-springer:checked ~ .figuren-buehne .zug-springer .zug-punkt,
+#figur-bauer:checked ~ .figuren-buehne .zug-bauer .zug-punkt {
+  display: block;
+}
+
+/* Schlagziel-Markierung (gegnerische Figur + roter Rahmen) */
+#figur-turm:checked ~ .figuren-buehne .ziel-turm,
+#figur-laeufer:checked ~ .figuren-buehne .ziel-laeufer,
+#figur-dame:checked ~ .figuren-buehne .ziel-dame,
+#figur-koenig:checked ~ .figuren-buehne .ziel-koenig,
+#figur-springer:checked ~ .figuren-buehne .ziel-springer,
+#figur-bauer:checked ~ .figuren-buehne .ziel-bauer {
+  box-shadow: inset 0 0 0 3px var(--farbe-rot-kontrast);
+}
+
+#figur-turm:checked ~ .figuren-buehne .ziel-turm .ziel-gegner,
+#figur-laeufer:checked ~ .figuren-buehne .ziel-laeufer .ziel-gegner,
+#figur-dame:checked ~ .figuren-buehne .ziel-dame .ziel-gegner,
+#figur-koenig:checked ~ .figuren-buehne .ziel-koenig .ziel-gegner,
+#figur-springer:checked ~ .figuren-buehne .ziel-springer .ziel-gegner,
+#figur-bauer:checked ~ .figuren-buehne .ziel-bauer .ziel-gegner {
+  display: grid;
+  place-items: center;
+}
+
+/* Steuerung, Legende & Schnellwahl */
+.brett-steuerung {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brett-legende {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--farbe-text-hellgrau);
+}
+
+.legende-punkt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.legende-marker-zug {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: var(--farbe-rot);
+  box-shadow: 0 0 0 2px var(--farbe-weiss);
+}
+
+.legende-marker-schlag {
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 2px solid var(--farbe-rot-kontrast);
+  border-radius: 2px;
+}
+
+.brett-reset-btn {
+  display: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.45rem;
+  background-color: var(--farbe-rot);
+  color: var(--farbe-weiss);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.brett-reset-btn:hover {
+  background-color: var(--farbe-rot-hell);
+}
+
+#figur-koenig:checked ~ .figuren-buehne .brett-reset-btn,
+#figur-dame:checked ~ .figuren-buehne .brett-reset-btn,
+#figur-turm:checked ~ .figuren-buehne .brett-reset-btn,
+#figur-laeufer:checked ~ .figuren-buehne .brett-reset-btn,
+#figur-springer:checked ~ .figuren-buehne .brett-reset-btn,
+#figur-bauer:checked ~ .figuren-buehne .brett-reset-btn {
+  display: inline-block;
+}
+
+.figuren-schnellwahl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.schnellwahl-chip {
+  padding: 0.45rem 0.55rem;
+  border-radius: 0.4rem;
+  background-color: var(--farbe-icon-dunkel);
+  color: var(--farbe-text-hellgrau);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.schnellwahl-chip:hover {
+  background-color: var(--farbe-icon);
+  color: var(--farbe-weiss);
+}
+
+#figur-koenig:checked ~ .figuren-buehne label[for="figur-koenig"].schnellwahl-chip,
+#figur-dame:checked ~ .figuren-buehne label[for="figur-dame"].schnellwahl-chip,
+#figur-turm:checked ~ .figuren-buehne label[for="figur-turm"].schnellwahl-chip,
+#figur-laeufer:checked ~ .figuren-buehne label[for="figur-laeufer"].schnellwahl-chip,
+#figur-springer:checked ~ .figuren-buehne label[for="figur-springer"].schnellwahl-chip,
+#figur-bauer:checked ~ .figuren-buehne label[for="figur-bauer"].schnellwahl-chip {
+  background-color: var(--farbe-rot);
+  color: var(--farbe-weiss);
+}
+
+#figur-koenig:focus-visible ~ .figuren-buehne label[for="figur-koenig"].schnellwahl-chip,
+#figur-dame:focus-visible ~ .figuren-buehne label[for="figur-dame"].schnellwahl-chip,
+#figur-turm:focus-visible ~ .figuren-buehne label[for="figur-turm"].schnellwahl-chip,
+#figur-laeufer:focus-visible ~ .figuren-buehne label[for="figur-laeufer"].schnellwahl-chip,
+#figur-springer:focus-visible ~ .figuren-buehne label[for="figur-springer"].schnellwahl-chip,
+#figur-bauer:focus-visible ~ .figuren-buehne label[for="figur-bauer"].schnellwahl-chip,
+#figur-start:focus-visible ~ .figuren-buehne .schachbrett {
+  outline: 2px solid var(--farbe-rot-kontrast);
+  outline-offset: 3px;
+}
+
+/* Rechte Spalte: Figuren-Erklärung */
+.figur-info-karte {
+  display: none;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--farbe-rangliste-zeile);
+  gap: 1rem;
+}
+
+#figur-start:checked ~ .figuren-buehne .info-start,
+#figur-koenig:checked ~ .figuren-buehne .info-koenig,
+#figur-dame:checked ~ .figuren-buehne .info-dame,
+#figur-turm:checked ~ .figuren-buehne .info-turm,
+#figur-laeufer:checked ~ .figuren-buehne .info-laeufer,
+#figur-springer:checked ~ .figuren-buehne .info-springer,
+#figur-bauer:checked ~ .figuren-buehne .info-bauer {
+  display: grid;
+}
+
+.figur-info-kopf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.figur-info-kopf h4 {
+  margin: 0;
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  color: var(--farbe-weiss);
+}
+
+.figur-icon-badge {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 0.6rem;
+  background-color: var(--farbe-icon);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.figur-info-karte p {
+  margin: 0;
+  color: var(--farbe-text-hellgrau);
+  line-height: 1.65;
+}
+
+.figur-merkmale {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--farbe-text-hellgrau);
+  line-height: 1.6;
+  display: grid;
+  gap: 0.45rem;
+}
+
+/* Bereich 2: Regeln-Karussell (CSS-only) */
+.regel-slide {
+  display: none;
+  grid-template-columns: minmax(250px, 340px) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--farbe-rangliste-zeile);
+}
+
+#regel-1:checked ~ .regeln-karussell .slide-1,
+#regel-2:checked ~ .regeln-karussell .slide-2,
+#regel-3:checked ~ .regeln-karussell .slide-3,
+#regel-4:checked ~ .regeln-karussell .slide-4 {
+  display: grid;
+}
+
+#regel-1:focus-visible ~ .regeln-karussell,
+#regel-2:focus-visible ~ .regeln-karussell,
+#regel-3:focus-visible ~ .regeln-karussell,
+#regel-4:focus-visible ~ .regeln-karussell {
+  outline: 2px solid var(--farbe-rot-kontrast);
+  outline-offset: 4px;
+  border-radius: 0.75rem;
+}
+
+.regel-visualisierung {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.karussell-pfeil {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 50%;
+  background-color: var(--farbe-icon-dunkel);
+  color: var(--farbe-weiss);
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.karussell-pfeil:hover {
+  background-color: var(--farbe-rot);
+}
+
+.mini-regelbrett {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 2px solid var(--farbe-icon-dunkel);
+  border-radius: 0.45rem;
+  overflow: hidden;
+}
+
+.mini-regelbrett span {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--farbe-schwarz);
+  text-shadow: 0 0 2px var(--farbe-weiss);
+}
+
+.regel-text {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.regel-zaehler {
+  color: var(--farbe-rot-kontrast);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.regel-text h4 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: var(--farbe-weiss);
+}
+
+.regel-text p {
+  margin: 0;
+  color: var(--farbe-text-hellgrau);
+  line-height: 1.65;
+}
+
+/* Bereich 3: Weiterlernen-Linkliste */
+.lernen-links-bereich {
+  padding-top: 2rem;
+  border-top: 2px solid var(--farbe-icon);
+}
+
+.lernen-linkliste {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.8rem;
+  color: var(--farbe-text-hellgrau);
+  line-height: 1.6;
+}
+
+@media (max-width: 860px) {
+  .figuren-buehne,
+  .regel-slide {
+    grid-template-columns: 1fr;
+  }
+
+  .brett-spalte {
+    max-width: 460px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 440px) {
+  .figuren-schnellwahl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }

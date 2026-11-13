@@ -43,8 +43,173 @@
     </aside>
 
     <main id="inhalt">
-        <!-- Individueller Seiteninhalt -->
-        ich liebe kontakt
+        <section class="kontakt-seite" aria-labelledby="kontakt-titel">
+            <header class="kontakt-kopf">
+                <p class="anmeldung-kicker">DHBW Schachclub</p>
+                <h2 id="kontakt-titel" class="kontakt-titel">Kontakt &amp; Ansprechpersonen</h2>
+                <p class="kontakt-untertitel">
+                    Du hast Fragen zum Training, möchtest als Einsteiger reinschnuppern oder interessierst
+                    dich für Campus-Turniere? Hier findest du direkt die passende Ansprechperson aus unserem
+                    Orga-Team.
+                </p>
+            </header>
+
+            <!-- Bereich 1: Ansprechpersonen -->
+            <section aria-labelledby="team-titel">
+                <h3 id="team-titel" class="kontakt-abschnitt-titel">Deine Ansprechpersonen im Club</h3>
+
+                <div class="team-raster">
+                    <article class="team-karte">
+                        <figure class="team-bild">
+                            <img src="../assets/img/team/jeremy.png" alt="Porträt von Jeremy – Clubleiter">
+                        </figure>
+                        <div class="team-info">
+                            <h4>Jeremy</h4>
+                            <p class="team-rolle">Clubleiter</p>
+                            <p class="team-beschreibung">
+                                Leitet den DHBW Schachclub, hält alle Fäden im Hintergrund zusammen und
+                                koordiniert unsere Trainingsabende sowie Turniere gegen andere Standorte.
+                            </p>
+                            <a href="mailto:jeremy@dhbw-schachclub-beispiel.de" class="team-mail">jeremy@dhbw-schachclub-beispiel.de</a>
+                        </div>
+                    </article>
+
+                    <article class="team-karte">
+                        <figure class="team-bild">
+                            <img src="../assets/img/team/nils.png" alt="Porträt von Nils – Ansprechpartner für Neumitglieder">
+                        </figure>
+                        <div class="team-info">
+                            <h4>Nils</h4>
+                            <p class="team-rolle">Ansprechpartner für Neumitglieder</p>
+                            <p class="team-beschreibung">
+                                Deine erste Anlaufstelle, wenn du neu dabei bist: Er beantwortet Fragen zum
+                                Einstieg, begleitet dich beim ersten Schnupperabend und hilft dir beim Start.
+                            </p>
+                            <a href="mailto:nils@dhbw-schachclub-beispiel.de" class="team-mail">nils@dhbw-schachclub-beispiel.de</a>
+                        </div>
+                    </article>
+
+                    <article class="team-karte">
+                        <figure class="team-bild">
+                            <img src="../assets/img/team/nicolas.png" alt="Porträt von Nicolas – Organisation und Design">
+                        </figure>
+                        <div class="team-info">
+                            <h4>Nicolas</h4>
+                            <p class="team-rolle">Organisation / Design</p>
+                            <p class="team-beschreibung">
+                                Plant die Abläufe rund um Events und Clubabende und sorgt dafür, dass der
+                                visuelle Auftritt unseres Schachclubs auf allen Kanälen stimmig bleibt.
+                            </p>
+                            <a href="mailto:nicolas@dhbw-schachclub-beispiel.de" class="team-mail">nicolas@dhbw-schachclub-beispiel.de</a>
+                        </div>
+                    </article>
+
+                    <article class="team-karte">
+                        <figure class="team-bild">
+                            <img src="../assets/img/team/adrian.png" alt="Porträt von Adrian – Techniker und Technik">
+                        </figure>
+                        <div class="team-info">
+                            <h4>Adrian</h4>
+                            <p class="team-rolle">Techniker / Technik</p>
+                            <p class="team-beschreibung">
+                                Kümmert sich um die technische Umsetzung unseres Webportals sowie um
+                                Schachuhren, Bretter und die benötigte Technik bei unseren Club-Treffen.
+                            </p>
+                            <a href="mailto:adrian@dhbw-schachclub-beispiel.de" class="team-mail">adrian@dhbw-schachclub-beispiel.de</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Bereich 2: Allgemeine Kontaktdaten (Beispieldaten) & Direktnachricht -->
+            <section class="kontakt-unten" aria-labelledby="kontakt-daten-titel">
+                <div class="kontakt-info-box">
+                    <h3 id="kontakt-daten-titel">Allgemeine Kontaktdaten (Beispiel)</h3>
+                    <dl class="kontakt-datenliste">
+                        <div>
+                            <dt>Treffpunkt (Theoriephase)</dt>
+                            <dd>Mittwochs ab 18:00 Uhr · Hörsaal 214 (DHBW Heidenheim)</dd>
+                        </div>
+                        <div>
+                            <dt>Beispiel-Adresse</dt>
+                            <dd>Marienstraße 20, 89518 Heidenheim an der Brenz</dd>
+                        </div>
+                        <div>
+                            <dt>Allgemeine E-Mail</dt>
+                            <dd><a href="mailto:schachclub@dhbw-heidenheim-beispiel.de" class="recht-link">schachclub@dhbw-heidenheim-beispiel.de</a></dd>
+                        </div>
+                        <div>
+                            <dt>Beispiel-Telefon</dt>
+                            <dd>+49 (0) 7321 0000-42 (erreichbar vor Club-Abenden)</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div id="kontakt-formular" class="kontakt-formular-box">
+                    <h3>Kurze Nachricht schreiben</h3>
+                    <form class="anmelde-formular" action="#kontakt-bestaetigung" method="get">
+                        <div class="formular-zeile">
+                            <div class="formular-feld">
+                                <label for="kontakt-name">Dein Name</label>
+                                <input
+                                    type="text"
+                                    id="kontakt-name"
+                                    name="name"
+                                    placeholder="z. B. Lukas Meyer"
+                                    autocomplete="name"
+                                    required
+                                >
+                            </div>
+
+                            <div class="formular-feld">
+                                <label for="kontakt-email">Deine E-Mail-Adresse</label>
+                                <input
+                                    type="email"
+                                    id="kontakt-email"
+                                    name="email"
+                                    placeholder="name@student.dhbw-heidenheim.de"
+                                    autocomplete="email"
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="formular-feld">
+                            <label for="kontakt-empfaenger">Ansprechperson / Thema</label>
+                            <select id="kontakt-empfaenger" name="empfaenger">
+                                <option value="nils">Neumitglieder &amp; Einstieg (Nils)</option>
+                                <option value="jeremy">Clubleitung &amp; Turniere (Jeremy)</option>
+                                <option value="nicolas">Organisation &amp; Design (Nicolas)</option>
+                                <option value="adrian">Technik &amp; Website (Adrian)</option>
+                            </select>
+                        </div>
+
+                        <div class="formular-feld">
+                            <label for="kontakt-nachricht">Deine Nachricht</label>
+                            <textarea
+                                id="kontakt-nachricht"
+                                name="nachricht"
+                                rows="4"
+                                placeholder="Schreib uns kurz dein Anliegen …"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="anmelde-button">Nachricht absenden</button>
+                    </form>
+
+                    <!-- CSS-only Bestätigung ohne JavaScript über :target -->
+                    <div id="kontakt-bestaetigung" class="anmeldung-bestaetigung" role="status">
+                        <p>
+                            <strong>Hinweis zur Vorschau:</strong> Da diese Website ohne Backend läuft, wird
+                            deine Nachricht noch nicht versendet. Schreib uns alternativ direkt per
+                            Beispiel-E-Mail oder komm mittwochs in Hörsaal 214 vorbei!
+                        </p>
+                        <a href="#kontakt-formular" class="bestaetigung-schliessen">Hinweis schließen</a>
+                    </div>
+                </div>
+            </section>
+        </section>
     </main>
     <footer class="site-footer">
         <p>© 2026 Projektarbeit | Adrian, Jeremy, Nicolas &amp; Nils | DHBW Heidenheim</p>

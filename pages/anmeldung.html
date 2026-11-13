@@ -43,8 +43,179 @@
     </aside>
 
     <main id="inhalt">
-        <!-- Individueller Seiteninhalt -->
-        ich liebe kontakt
+        <section class="anmeldung-seite" aria-labelledby="anmeldung-haupttitel">
+            <h2 id="anmeldung-haupttitel" class="visually-hidden">Anmeldung und Infos zum DHBW Schachclub</h2>
+
+            <!-- 1. Bereich: Fragen ... -->
+            <section class="anmeldung-block" aria-labelledby="fragen-titel">
+                <p class="anmeldung-kicker">Gut zu wissen</p>
+                <h3 id="fragen-titel" class="anmeldung-abschnitt-titel">Fragen …</h3>
+
+                <div class="faq-liste">
+                    <details class="faq-eintrag">
+                        <summary>Brauche ich schon eine Elo-Zahl oder Turniererfahrung?</summary>
+                        <p>
+                            Nein! Egal ob du gerade erst die Gangart von Springer und Läufer lernst
+                            oder regelmäßig Sizilianische Verteidigung spielst – bei uns sind alle
+                            Spielstärken willkommen.
+                        </p>
+                    </details>
+
+                    <details class="faq-eintrag">
+                        <summary>Muss ich ein eigenes Schachbrett oder eine Uhr mitbringen?</summary>
+                        <p>
+                            Bretter, Figuren und digitale Schachuhren für Blitz- und Schnellschach
+                            stellt der Club vor Ort bereit. Du musst nichts mitbringen.
+                        </p>
+                    </details>
+
+                    <details class="faq-eintrag">
+                        <summary>Wann und wo treffen wir uns?</summary>
+                        <p>
+                            Immer im Anschluss an die Vorlesungen in Hörsaal 214. Alle aktuellen
+                            Termine findest du auf der <a href="termine.html">Termin-Übersicht</a>.
+                        </p>
+                    </details>
+                </div>
+
+                <p class="anmeldung-hinweistext">
+                    Noch etwas offen? Schreib uns gerne über das <a href="kontakt.html">Kontaktformular</a>.
+                </p>
+            </section>
+
+            <!-- 2. Bereich: Schnuppern? -->
+            <section class="anmeldung-block schnuppern-karte" aria-labelledby="schnuppern-titel">
+                <h3 id="schnuppern-titel" class="anmeldung-abschnitt-titel">Schnuppern?</h3>
+                <p>
+                    Komm jederzeit ohne Anmeldung vorbei – einfach mittwochs ab 18:00 Uhr in Hörsaal 214.
+                    Egal ob Anfänger oder Vereinsspieler: Bretter und Uhren sind vor Ort, und du kannst
+                    direkt eine lockere Partie gegen andere DHBW-Studierende spielen.
+                </p>
+                <div class="schnuppern-aktionen">
+                    <a href="#schnupper-bestaetigung" class="schnuppern-button">Ich komme zum Schnuppern (freiwillig)</a>
+                    <span class="schnuppern-hinweis-klein">Optional – hilft uns nur beim Bretter-Aufbau.</span>
+                </div>
+
+                <div id="schnupper-bestaetigung" class="anmeldung-bestaetigung" role="status">
+                    <p>
+                        <strong>Stark, wir freuen uns auf dich!</strong> Du musst nichts weiter ausfüllen –
+                        komm einfach mittwochs ab 18:00 Uhr in Hörsaal 214 vorbei.
+                    </p>
+                    <a href="#schnuppern-titel" class="bestaetigung-schliessen">Hinweis schließen</a>
+                </div>
+            </section>
+
+            <!-- 3. Bereich: Fest dabei sein / Mitglied werden & Turnier-Anmeldung -->
+            <section id="anmelden-formular" class="anmeldung-block" aria-labelledby="anmelden-titel">
+                <h3 id="anmelden-titel" class="anmeldung-unterstrichen">Fest dabei sein &amp; Turniere</h3>
+                <p class="anmeldung-untertitel">
+                    Zum ersten Reinschnuppern brauchst du dich nicht anzumelden, komm einfach vorbei!
+                    Dieses Formular ist für alle, die dauerhaft mitspielen, in unsere Gruppe aufgenommen
+                    werden oder sich für das nächste Turnier anmelden möchten.
+                </p>
+
+                <form class="anmelde-formular" action="#anmeldung-bestaetigung" method="get">
+                    <div class="formular-zeile">
+                        <div class="formular-feld">
+                            <label for="anmeldung-name">Name &amp; Kurs (z. B. Max Mustermann, WWI24)</label>
+                            <input
+                                type="text"
+                                id="anmeldung-name"
+                                name="name"
+                                placeholder="z. B. Lena Weber – BWL23"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+
+                        <div class="formular-feld">
+                            <label for="anmeldung-email">DHBW-E-Mail-Adresse</label>
+                            <input
+                                type="email"
+                                id="anmeldung-email"
+                                name="email"
+                                placeholder="vorname.nachname@student.dhbw-heidenheim.de"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="formular-feld">
+                        <label for="anmeldung-zweck">Wofür möchtest du dich eintragen?</label>
+                        <select id="anmeldung-zweck" name="zweck">
+                            <option value="mitgliedschaft">Feste Mitgliedschaft &amp; Aufnahme in den Verteiler</option>
+                            <option value="turnier">Interne Turniere &amp; Events (Blitzturnier / Semester-Opening / Standort-Match)</option>
+                            <option value="hochschulliga">Mannschaftsspielbetrieb / Hochschulliga</option>
+                            <option value="platzplanung">Fester Brettplatz für einen Termin (max. 16 Bretter in Hörsaal 214)</option>
+                        </select>
+                    </div>
+
+                    <div class="formular-feld">
+                        <p id="kanaele-label" class="formular-gruppen-label">
+                            Aufnahme in unsere Community-Kanäle (für Mitglieder &amp; Turnier-Updates)
+                        </p>
+                        <div class="formular-fieldset checkbox-gruppe" role="group" aria-labelledby="kanaele-label">
+                            <label class="checkbox-label" for="kanal-whatsapp">
+                                <input type="checkbox" id="kanal-whatsapp" name="kanal" value="whatsapp">
+                                <span>WhatsApp Gruppe</span>
+                            </label>
+                            <label class="checkbox-label" for="kanal-discord">
+                                <input type="checkbox" id="kanal-discord" name="kanal" value="discord">
+                                <span>Discord-Server</span>
+                            </label>
+                            <label class="checkbox-label" for="kanal-mail">
+                                <input type="checkbox" id="kanal-mail" name="kanal" value="mail" checked>
+                                <span>E-Mail-Verteiler</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="formular-zeile">
+                        <div class="formular-feld">
+                            <label for="anmeldung-rating">Spielstärke (Elo oder Online-Rating)</label>
+                            <input
+                                type="text"
+                                id="anmeldung-rating"
+                                name="rating"
+                                placeholder="z. B. ca. 2000, 1360 oder Einsteiger"
+                            >
+                        </div>
+
+                        <div class="formular-feld">
+                            <label for="anmeldung-verfuegbarkeit">Verfügbarkeit (z. B. für Liga &amp; Platzplanung)</label>
+                            <input
+                                type="text"
+                                id="anmeldung-verfuegbarkeit"
+                                name="verfuegbarkeit"
+                                placeholder="z. B. mittwochs ab 18:00 Uhr / am Wochenende"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="formular-feld">
+                        <label for="anmeldung-nachricht">Turnierwunsch, Wunschtermin oder Anmerkung (optional)</label>
+                        <textarea
+                            id="anmeldung-nachricht"
+                            name="nachricht"
+                            rows="3"
+                            placeholder="z. B. Anmeldung für das Match Heidenheim vs. Stuttgart oder Platzreservierung für nächsten Mittwoch."
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="anmelde-button">Verbindlich eintragen</button>
+                </form>
+
+                <!-- CSS-only Bestätigung ohne JavaScript über :target -->
+                <div id="anmeldung-bestaetigung" class="anmeldung-bestaetigung" role="status">
+                    <p>
+                        <strong>Hinweis zur Vorschau:</strong> Die serverseitige Speicherung für Verteiler,
+                        Turnier-Auslosung und Platzreservierung folgt in einer späteren Ausbaustufe.
+                    </p>
+                    <a href="#anmelden-formular" class="bestaetigung-schliessen">Hinweis schließen</a>
+                </div>
+            </section>
+        </section>
     </main>
     <footer class="site-footer">
         <p>© 2026 Projektarbeit | Adrian, Jeremy, Nicolas &amp; Nils | DHBW Heidenheim</p>

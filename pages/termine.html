@@ -43,8 +43,122 @@
     </aside>
 
     <main id="inhalt">
-        <!-- Individueller Seiteninhalt -->
-        ich liebe kontakt
+        <section class="termine-seite" aria-labelledby="termine-titel">
+            <header class="termine-kopf">
+                <p class="anmeldung-kicker">DHBW Schachclub</p>
+                <h2 id="termine-titel" class="termine-titel">Anstehende Termine</h2>
+                <p class="termine-einleitung">
+                    Alle wöchentlichen Trainingsabende, internen Blitzturniere und Campus-Events im Überblick.
+                    Für das reguläre Mittwochstraining kannst du jederzeit ohne Anmeldung vorbeikommen.
+                </p>
+            </header>
+
+            <!-- Zweispaltige Termin-Karten mit Datum links und Beschreibung rechts -->
+            <div class="termine-raster">
+                <article class="termin-karte">
+                    <div class="termin-datum">
+                        <time datetime="2026-11-18">
+                            <span class="datum-tag">18</span>
+                            <span class="datum-monat">Nov</span>
+                        </time>
+                        <span class="datum-wochentag">Mittwoch</span>
+                    </div>
+                    <div class="termin-inhalt">
+                        <h3>Offener Schachabend &amp; Schnuppertraining</h3>
+                        <p class="termin-meta">18:00 Uhr · Hörsaal 214</p>
+                        <p>
+                            Lockere 10+5-Schnellschachpartien nach der Vorlesung – ideal für Einsteiger
+                            und zum Kennenlernen. Bretter und Uhren sind vor Ort.
+                        </p>
+                        <a href="anmeldung.html#schnuppern-titel" class="termin-link">Infos zum Schnuppern ansehen</a>
+                    </div>
+                </article>
+
+                <article class="termin-karte">
+                    <div class="termin-datum">
+                        <time datetime="2026-11-25">
+                            <span class="datum-tag">25</span>
+                            <span class="datum-monat">Nov</span>
+                        </time>
+                        <span class="datum-wochentag">Mittwoch</span>
+                    </div>
+                    <div class="termin-inhalt">
+                        <h3>Campus-Blitzturnier (3+2)</h3>
+                        <p class="termin-meta">18:15 Uhr · Hörsaal 214</p>
+                        <p>
+                            5 bis 7 Runden im Schweizer System mit offizieller Wertung für unsere Blitz-Elo-Rangliste.
+                            Maximal 16 Plätze (passend zu unseren Brettern vor Ort).
+                        </p>
+                        <a href="anmeldung.html#anmelden-formular" class="termin-link">Für das Blitzturnier anmelden</a>
+                    </div>
+                </article>
+
+                <article class="termin-karte">
+                    <div class="termin-datum">
+                        <time datetime="2026-12-02">
+                            <span class="datum-tag">02</span>
+                            <span class="datum-monat">Dez</span>
+                        </time>
+                        <span class="datum-wochentag">Mittwoch</span>
+                    </div>
+                    <div class="termin-inhalt">
+                        <h3>Eröffnungs-Workshop: Sizilianische Verteidigung</h3>
+                        <p class="termin-meta">18:00 Uhr · Hörsaal 214</p>
+                        <p>
+                            Gemeinsame Analyse typischer Bauernstrukturen und Taktikmotive nach 1. e4 c5 –
+                            anschließend kurze Testpartien zur Vertiefung.
+                        </p>
+                        <a href="schachlernen.html" class="termin-link">Lernmaterialien entdecken</a>
+                    </div>
+                </article>
+
+                <article class="termin-karte">
+                    <div class="termin-datum">
+                        <time datetime="2026-12-12">
+                            <span class="datum-tag">12</span>
+                            <span class="datum-monat">Dez</span>
+                        </time>
+                        <span class="datum-wochentag">Samstag</span>
+                    </div>
+                    <div class="termin-inhalt">
+                        <h3>DHBW-Standortvergleich: Heidenheim vs. Stuttgart</h3>
+                        <p class="termin-meta">14:00 Uhr · Club vor Ort in Hörsaal 214 (Match online)</p>
+                        <p>
+                            Wir treffen uns gemeinsam vor Ort am Campus und treten online gegen die Teams
+                            anderer DHBW-Standorte an. Zuschauer sind herzlich willkommen.
+                        </p>
+                        <a href="anmeldung.html#anmelden-formular" class="termin-link">Für das Team bewerben</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Trennlinie & Bereich "Weitere Termine" -->
+            <section class="weitere-termine" aria-labelledby="weitere-termine-titel">
+                <h3 id="weitere-termine-titel">Weitere Termine</h3>
+                <p class="termin-praxis-hinweis">
+                    Hinweis zur Praxisphase: Von Januar bis März finden keine Vorlesungen statt – in dieser Zeit
+                    pausieren unsere regulären Treffen vor Ort. Ab April starten wir wieder gemeinsam in Hörsaal 214.
+                </p>
+                <ul class="weitere-termine-liste">
+                    <li class="weiterer-termin-eintrag">
+                        <time datetime="2026-12-16" class="weiteres-datum">Mi, 16. Dez 2026</time>
+                        <span class="weiterer-titel">Jahresabschluss-Tandem &amp; Weihnachtsschach vor der Praxisphase (ab 18:00 Uhr, Hörsaal 214)</span>
+                    </li>
+                    <li class="weiterer-termin-eintrag">
+                        <time datetime="2027-04-07" class="weiteres-datum">Mi, 07. Apr 2027</time>
+                        <span class="weiterer-titel">Theoriephase-Auftakt &amp; freies Training nach der Praxiszeit (ab 18:00 Uhr, Hörsaal 214)</span>
+                    </li>
+                    <li class="weiterer-termin-eintrag">
+                        <time datetime="2027-04-21" class="weiteres-datum">Mi, 21. Apr 2027</time>
+                        <span class="weiterer-titel">Frühjahrs-Blitzcup (3+2, max. 16 Plätze) – Wertung für die DHBW-Rangliste</span>
+                    </li>
+                    <li class="weiterer-termin-eintrag">
+                        <time datetime="2027-05-08" class="weiteres-datum">Sa, 08. Mai 2027</time>
+                        <span class="weiterer-titel">Online-Turnier der DHBW-Standorte – gemeinsames Treffen unseres Clubs in Hörsaal 214</span>
+                    </li>
+                </ul>
+            </section>
+        </section>
     </main>
     <footer class="site-footer">
         <p>© 2026 Projektarbeit | Adrian, Jeremy, Nicolas &amp; Nils | DHBW Heidenheim</p>

@@ -43,8 +43,382 @@
     </aside>
 
     <main id="inhalt">
-        <!-- Individueller Seiteninhalt -->
-        ich liebe kontakt
+        <section class="lernen-seite" aria-labelledby="lernen-titel">
+            <header class="lernen-kopf">
+                <p class="anmeldung-kicker">DHBW Schachclub</p>
+                <h2 id="lernen-titel" class="lernen-titel">Schach lernen</h2>
+                <p class="lernen-einleitung">
+                    Lerne die Gangarten aller Figuren direkt am interaktiven Brett kennen, entdecke die
+                    wichtigsten Sonderregeln und finde den Einstieg in unsere Trainingsabende.
+                </p>
+            </header>
+
+            <!-- ==================== Bereich 1: Die Figuren ==================== -->
+            <section class="figuren-bereich" aria-labelledby="figuren-titel">
+                <h3 id="figuren-titel" class="lernen-abschnitt-titel">Die Figuren</h3>
+
+                <!-- CSS-only Zustandssteuerung über Radio-Buttons (kein JavaScript) -->
+                <input type="radio" name="schachfigur" id="figur-start" class="visually-hidden" checked>
+                <input type="radio" name="schachfigur" id="figur-koenig" class="visually-hidden">
+                <input type="radio" name="schachfigur" id="figur-dame" class="visually-hidden">
+                <input type="radio" name="schachfigur" id="figur-turm" class="visually-hidden">
+                <input type="radio" name="schachfigur" id="figur-laeufer" class="visually-hidden">
+                <input type="radio" name="schachfigur" id="figur-springer" class="visually-hidden">
+                <input type="radio" name="schachfigur" id="figur-bauer" class="visually-hidden">
+
+                <div class="figuren-buehne">
+                    <!-- Linke Spalte: CSS-Grid 8x8 Schachbrett + Legende + Schnellwahl -->
+                    <div class="brett-spalte">
+                        <div class="schachbrett" role="group" aria-label="Interaktives Schachbrett zur Figurenauswahl">
+                            <!-- Reihe 8 (Schwarz Grundreihe) -->
+                            <div class="brett-feld feld-hell"><label for="figur-turm" class="start-figur figur-schwarz" aria-label="Turm auswählen">&#9820;</label></div>
+                            <div class="brett-feld feld-dunkel"><label for="figur-springer" class="start-figur figur-schwarz" aria-label="Springer auswählen">&#9822;</label></div>
+                            <div class="brett-feld feld-hell"><label for="figur-laeufer" class="start-figur figur-schwarz" aria-label="Läufer auswählen">&#9821;</label></div>
+                            <div class="brett-feld feld-dunkel ziel-turm ziel-dame"><span class="schlag-ziel ziel-gegner" aria-hidden="true">&#9823;</span><label for="figur-dame" class="start-figur figur-schwarz" aria-label="Dame auswählen">&#9819;</label></div>
+                            <div class="brett-feld feld-hell"><label for="figur-koenig" class="start-figur figur-schwarz" aria-label="König auswählen">&#9818;</label></div>
+                            <div class="brett-feld feld-dunkel"><label for="figur-laeufer" class="start-figur figur-schwarz" aria-label="Läufer auswählen">&#9821;</label></div>
+                            <div class="brett-feld feld-hell"><label for="figur-springer" class="start-figur figur-schwarz" aria-label="Springer auswählen">&#9822;</label></div>
+                            <div class="brett-feld feld-dunkel ziel-laeufer ziel-dame"><span class="schlag-ziel ziel-gegner" aria-hidden="true">&#9823;</span><label for="figur-turm" class="start-figur figur-schwarz" aria-label="Turm auswählen">&#9820;</label></div>
+
+                            <!-- Reihe 7 (Schwarze Bauern) -->
+                            <div class="brett-feld feld-dunkel zug-diag"><span class="zug-punkt" aria-hidden="true"></span><label for="figur-bauer" class="start-figur figur-schwarz" aria-label="Bauer auswählen">&#9823;</label></div>
+                            <div class="brett-feld feld-hell"><label for="figur-bauer" class="start-figur figur-schwarz" aria-label="Bauer auswählen">&#9823;</label></div>
+                            <div class="brett-feld feld-dunkel"><label for="figur-bauer" class="start-figur figur-schwarz" aria-label="Bauer auswählen">&#9823;</label></div>
+                            <div class="brett-feld feld-hell zug-ortho"><span class="zug-punkt" aria-hidden="true"></span><label for="figur-bauer" class="start-figur figur-schwarz" aria-label="Bauer auswählen">&#9823;</label></div>
+                            <div class="brett-feld feld-dunkel"><label for="figur-bauer" class="start-figur figur-schwarz" aria-label="Bauer auswählen">&#9823;</label></div>
+                            <div class="brett-feld feld-hell"><label for="figur-bauer" class="start-figur figur-schwarz" aria-label="Bauer auswählen">&#9823;</label></div>
+                            <div class="brett-feld feld-dunkel zug-diag"><span class="zug-punkt" aria-hidden="true"></span><label for="figur-bauer" class="start-figur figur-schwarz" aria-label="Bauer auswählen">&#9823;</label></div>
+                            <div class="brett-feld feld-hell"><label for="figur-bauer" class="start-figur figur-schwarz" aria-label="Bauer auswählen">&#9823;</label></div>
+
+                            <!-- Reihe 6 -->
+                            <div class="brett-feld feld-hell"></div>
+                            <div class="brett-feld feld-dunkel zug-diag"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-hell zug-springer"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-dunkel zug-ortho"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-hell ziel-springer"><span class="schlag-ziel ziel-gegner" aria-hidden="true">&#9823;</span></div>
+                            <div class="brett-feld feld-dunkel zug-diag"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-hell"></div>
+                            <div class="brett-feld feld-dunkel"></div>
+
+                            <!-- Reihe 5 -->
+                            <div class="brett-feld feld-dunkel"></div>
+                            <div class="brett-feld feld-hell zug-springer"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-dunkel zug-diag zug-koenig ziel-bauer"><span class="zug-punkt" aria-hidden="true"></span><span class="schlag-ziel ziel-gegner" aria-hidden="true">&#9823;</span></div>
+                            <div class="brett-feld feld-hell zug-ortho zug-koenig zug-bauer"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-dunkel zug-diag ziel-koenig ziel-bauer"><span class="zug-punkt" aria-hidden="true"></span><span class="schlag-ziel ziel-gegner" aria-hidden="true">&#9823;</span></div>
+                            <div class="brett-feld feld-hell zug-springer"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-dunkel"></div>
+                            <div class="brett-feld feld-hell"></div>
+
+                            <!-- Reihe 4 (d4 = Zentrumsfeld für die ausgewählte Figur) -->
+                            <div class="brett-feld feld-hell zug-ortho"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-dunkel zug-ortho"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-hell zug-ortho zug-koenig"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-dunkel feld-mitte" aria-live="polite">
+                                <span class="mitte-figur ist-koenig figur-weiss" aria-label="König auf d4">&#9818;</span>
+                                <span class="mitte-figur ist-dame figur-weiss" aria-label="Dame auf d4">&#9819;</span>
+                                <span class="mitte-figur ist-turm figur-weiss" aria-label="Turm auf d4">&#9820;</span>
+                                <span class="mitte-figur ist-laeufer figur-weiss" aria-label="Läufer auf d4">&#9821;</span>
+                                <span class="mitte-figur ist-springer figur-weiss" aria-label="Springer auf d4">&#9822;</span>
+                                <span class="mitte-figur ist-bauer figur-weiss" aria-label="Bauer auf d4">&#9823;</span>
+                            </div>
+                            <div class="brett-feld feld-hell zug-ortho zug-koenig"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-dunkel zug-ortho"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-hell zug-ortho"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-dunkel ziel-turm"><span class="schlag-ziel ziel-gegner" aria-hidden="true">&#9823;</span></div>
+
+                            <!-- Reihe 3 -->
+                            <div class="brett-feld feld-dunkel"></div>
+                            <div class="brett-feld feld-hell zug-springer"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-dunkel zug-diag zug-koenig"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-hell zug-ortho zug-koenig"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-dunkel zug-diag zug-koenig"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-hell zug-springer"><span class="zug-punkt" aria-hidden="true"></span></div>
+                            <div class="brett-feld feld-dunkel"></div>
+                            <div class="brett-feld feld-hell"></div>
+
+                            <!-- Reihe 2 (Weiße Bauern) -->
+                            <div class="brett-feld feld-hell"><label for="figur-bauer" class="start-figur figur-weiss" aria-label="Bauer auswählen">&#9823;</label></div>
+                            <div class="brett-feld feld-dunkel zug-diag"><span class="zug-punkt" aria-hidden="true"></span><label for="figur-bauer" class="start-figur figur-weiss" aria-label="Bauer auswählen">&#9823;</label></div>
+                            <div class="brett-feld feld-hell zug-springer"><span class="zug-punkt" aria-hidden="true"></span><label for="figur-bauer" class="start-figur figur-weiss" aria-label="Bauer auswählen">&#9823;</label></div>
+                            <div class="brett-feld feld-dunkel zug-ortho"><span class="zug-punkt" aria-hidden="true"></span><label for="figur-bauer" class="start-figur figur-weiss" aria-label="Bauer auswählen">&#9823;</label></div>
+                            <div class="brett-feld feld-hell zug-springer"><span class="zug-punkt" aria-hidden="true"></span><label for="figur-bauer" class="start-figur figur-weiss" aria-label="Bauer auswählen">&#9823;</label></div>
+                            <div class="brett-feld feld-dunkel zug-diag"><span class="zug-punkt" aria-hidden="true"></span><label for="figur-bauer" class="start-figur figur-weiss" aria-label="Bauer auswählen">&#9823;</label></div>
+                            <div class="brett-feld feld-hell"><label for="figur-bauer" class="start-figur figur-weiss" aria-label="Bauer auswählen">&#9823;</label></div>
+                            <div class="brett-feld feld-dunkel"><label for="figur-bauer" class="start-figur figur-weiss" aria-label="Bauer auswählen">&#9823;</label></div>
+
+                            <!-- Reihe 1 (Weiße Grundreihe) -->
+                            <div class="brett-feld feld-dunkel zug-diag"><span class="zug-punkt" aria-hidden="true"></span><label for="figur-turm" class="start-figur figur-weiss" aria-label="Turm auswählen">&#9820;</label></div>
+                            <div class="brett-feld feld-hell"><label for="figur-springer" class="start-figur figur-weiss" aria-label="Springer auswählen">&#9822;</label></div>
+                            <div class="brett-feld feld-dunkel"><label for="figur-laeufer" class="start-figur figur-weiss" aria-label="Läufer auswählen">&#9821;</label></div>
+                            <div class="brett-feld feld-hell zug-ortho"><span class="zug-punkt" aria-hidden="true"></span><label for="figur-dame" class="start-figur figur-weiss" aria-label="Dame auswählen">&#9819;</label></div>
+                            <div class="brett-feld feld-dunkel"><label for="figur-koenig" class="start-figur figur-weiss" aria-label="König auswählen">&#9818;</label></div>
+                            <div class="brett-feld feld-hell"><label for="figur-laeufer" class="start-figur figur-weiss" aria-label="Läufer auswählen">&#9821;</label></div>
+                            <div class="brett-feld feld-dunkel zug-diag"><span class="zug-punkt" aria-hidden="true"></span><label for="figur-springer" class="start-figur figur-weiss" aria-label="Springer auswählen">&#9822;</label></div>
+                            <div class="brett-feld feld-hell"><label for="figur-turm" class="start-figur figur-weiss" aria-label="Turm auswählen">&#9820;</label></div>
+                        </div>
+
+                        <div class="brett-steuerung">
+                            <div class="brett-legende">
+                                <span class="legende-punkt"><i class="legende-marker-zug" aria-hidden="true"></i> Zugfeld</span>
+                                <span class="legende-punkt"><i class="legende-marker-schlag" aria-hidden="true"></i> Schlagziel</span>
+                            </div>
+                            <label for="figur-start" class="brett-reset-btn">Zurück zur Startaufstellung</label>
+                        </div>
+
+                        <!-- Schnellwahl-Leiste (nur 6 Figuren, ohne Redundanz) -->
+                        <div class="figuren-schnellwahl" role="group" aria-label="Schnellwahl der Schachfiguren">
+                            <label for="figur-koenig" class="schnellwahl-chip">König</label>
+                            <label for="figur-dame" class="schnellwahl-chip">Dame</label>
+                            <label for="figur-turm" class="schnellwahl-chip">Turm</label>
+                            <label for="figur-laeufer" class="schnellwahl-chip">Läufer</label>
+                            <label for="figur-springer" class="schnellwahl-chip">Springer</label>
+                            <label for="figur-bauer" class="schnellwahl-chip">Bauer</label>
+                        </div>
+                    </div>
+
+                    <!-- Rechte Spalte: Figur-Name + Icon + Erklärung -->
+                    <div class="figur-info-spalte">
+                        <article class="figur-info-karte info-start">
+                            <div class="figur-info-kopf">
+                                <h4>Figur auf dem Brett auswählen</h4>
+                                <span class="figur-icon-badge figur-weiss" aria-hidden="true">&#9818;</span>
+                            </div>
+                            <p>
+                                Klicke direkt auf dem Schachbrett auf eine beliebige <strong>weiße oder schwarze Figur</strong>
+                                (oder nutze die Auswahl darunter). Die Figur wandert in die Brettmitte (d4) und zeigt
+                                dir sofort ihre erlaubten Züge und was sie schlagen kann.
+                            </p>
+                            <ul class="figur-merkmale">
+                                <li><strong>Brettgröße:</strong> 64 Felder (8×8 im Wechsel hell &amp; dunkel)</li>
+                                <li><strong>Ziel des Spiels:</strong> Den gegnerischen König so angreifen, dass er nicht entkommen kann (Schachmatt)</li>
+                            </ul>
+                        </article>
+
+                        <article class="figur-info-karte info-koenig">
+                            <div class="figur-info-kopf">
+                                <h4>Der König</h4>
+                                <span class="figur-icon-badge figur-weiss" aria-hidden="true">&#9818;</span>
+                            </div>
+                            <p>
+                                Der König ist die wichtigste Figur auf dem Brett: Wird er mattgesetzt, endet die Partie.
+                                Er zieht immer genau <strong>ein Feld</strong> in beliebige Richtung (waagerecht, senkrecht oder diagonal).
+                            </p>
+                            <ul class="figur-merkmale">
+                                <li><strong>Schlagen:</strong> Schlägt jede ungedeckte gegnerische Figur auf einem angrenzenden Feld (z. B. auf e5).</li>
+                                <li><strong>Wichtig:</strong> Der König darf niemals auf ein Feld ziehen, das von einer gegnerischen Figur bedroht wird (Sonderzug: Rochade).</li>
+                            </ul>
+                        </article>
+
+                        <article class="figur-info-karte info-dame">
+                            <div class="figur-info-kopf">
+                                <h4>Die Dame</h4>
+                                <span class="figur-icon-badge figur-weiss" aria-hidden="true">&#9819;</span>
+                            </div>
+                            <p>
+                                Die Dame ist die stärkste Figur (ca. <strong>9 Bauerneinheiten</strong>). Sie vereint Turm und Läufer
+                                und zieht beliebig weit waagerecht, senkrecht oder diagonal über freie Felder.
+                            </p>
+                            <ul class="figur-merkmale">
+                                <li><strong>Schlagen:</strong> Kann die erste gegnerische Figur auf einer freien Linie, Reihe oder Diagonale schlagen (z. B. d8 oder h8).</li>
+                                <li><strong>Einschränkung:</strong> Sie darf keine eigenen oder fremden Figuren überspringen.</li>
+                            </ul>
+                        </article>
+
+                        <article class="figur-info-karte info-turm">
+                            <div class="figur-info-kopf">
+                                <h4>Der Turm</h4>
+                                <span class="figur-icon-badge figur-weiss" aria-hidden="true">&#9820;</span>
+                            </div>
+                            <p>
+                                Der Turm zieht beliebig viele freie Felder <strong>geradeaus</strong> – also senkrecht entlang
+                                von Linien oder waagerecht entlang von Reihen.
+                            </p>
+                            <ul class="figur-merkmale">
+                                <li><strong>Schlagen:</strong> Schlägt eine gegnerische Figur auf seiner Linie oder Reihe (z. B. auf d8 oder h4) und bleibt auf deren Feld stehen.</li>
+                                <li><strong>Wert:</strong> 5 Punkte (wichtig auf offenen Linien und für die Rochade).</li>
+                            </ul>
+                        </article>
+
+                        <article class="figur-info-karte info-laeufer">
+                            <div class="figur-info-kopf">
+                                <h4>Der Läufer</h4>
+                                <span class="figur-icon-badge figur-weiss" aria-hidden="true">&#9821;</span>
+                            </div>
+                            <p>
+                                Der Läufer zieht beliebig weit <strong>diagonal</strong>. Da ein Läufer nie seine Feldfarbe
+                                wechselt, hat jeder Spieler einen weißfeldrigen und einen schwarzfeldrigen Läufer.
+                            </p>
+                            <ul class="figur-merkmale">
+                                <li><strong>Schlagen:</strong> Schlägt die erste gegnerische Figur auf seiner freien Diagonale (z. B. auf h8).</li>
+                                <li><strong>Wert:</strong> 3 Punkte (im Läuferpaar besonders stark).</li>
+                            </ul>
+                        </article>
+
+                        <article class="figur-info-karte info-springer">
+                            <div class="figur-info-kopf">
+                                <h4>Der Springer</h4>
+                                <span class="figur-icon-badge figur-weiss" aria-hidden="true">&#9822;</span>
+                            </div>
+                            <p>
+                                Der Springer zieht in einer <strong>L-Form</strong> (zwei Felder in eine Richtung und ein Feld
+                                im rechten Winkel dazu). Als <strong>einzige Figur</strong> darf er andere Figuren überspringen!
+                            </p>
+                            <ul class="figur-merkmale">
+                                <li><strong>Schlagen:</strong> Schlägt nur eine gegnerische Figur auf dem exakten Zielfeld seines L-Sprungs (hier auf e6), niemals Figuren auf den übersprungenen Feldern.</li>
+                                <li><strong>Wert:</strong> 3 Punkte (wechselt bei jedem Sprung die Feldfarbe).</li>
+                            </ul>
+                        </article>
+
+                        <article class="figur-info-karte info-bauer">
+                            <div class="figur-info-kopf">
+                                <h4>Der Bauer</h4>
+                                <span class="figur-icon-badge figur-weiss" aria-hidden="true">&#9823;</span>
+                            </div>
+                            <p>
+                                Der Bauer zieht ausschließlich <strong>vorwärts Richtung gegnerische Grundreihe</strong> – regulär ein
+                                Feld geradeaus (auf d5), von seinem Startfeld auch wahlweise zwei Felder.
+                            </p>
+                            <ul class="figur-merkmale">
+                                <li><strong>Schlagen:</strong> Schlägt anders als er zieht! Immer <strong>ein Feld diagonal vorwärts</strong> (hier auf c5 oder e5) – niemals geradeaus.</li>
+                                <li><strong>Umwandlung:</strong> Erreicht er die letzte Reihe, wird er zur Dame, Turm, Läufer oder Springer (Wert: 1 Punkt; Sonderzug: En passant).</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== Bereich 2: Wichtige Regeln (Karussell mit < >) ==================== -->
+            <section class="regeln-bereich" aria-labelledby="regeln-titel">
+                <h3 id="regeln-titel" class="lernen-abschnitt-titel">Wichtige Spielregeln &amp; Taktiken</h3>
+
+                <input type="radio" name="regeln-slide" id="regel-1" class="visually-hidden" checked>
+                <input type="radio" name="regeln-slide" id="regel-2" class="visually-hidden">
+                <input type="radio" name="regeln-slide" id="regel-3" class="visually-hidden">
+                <input type="radio" name="regeln-slide" id="regel-4" class="visually-hidden">
+
+                <div class="regeln-karussell">
+                    <!-- Slide 1: Schach, Schachmatt & Patt -->
+                    <article class="regel-slide slide-1">
+                        <div class="regel-visualisierung">
+                            <label for="regel-4" class="karussell-pfeil" aria-label="Vorherige Regel anzeigen">&#10094;</label>
+                            <div class="mini-regelbrett" role="img" aria-label="Darstellung eines Grundreihen-Schachmatts">
+                                <span class="feld-hell"></span><span class="feld-dunkel">&#9820;</span><span class="feld-hell"></span><span class="feld-dunkel">&#9818;</span>
+                                <span class="feld-dunkel"></span><span class="feld-hell"></span><span class="feld-dunkel">&#9823;</span><span class="feld-hell">&#9823;</span>
+                                <span class="feld-hell"></span><span class="feld-dunkel"></span><span class="feld-hell"></span><span class="feld-dunkel"></span>
+                                <span class="feld-dunkel"></span><span class="feld-hell"></span><span class="feld-dunkel"></span><span class="feld-hell"></span>
+                            </div>
+                            <label for="regel-2" class="karussell-pfeil" aria-label="Nächste Regel anzeigen">&#10095;</label>
+                        </div>
+                        <div class="regel-text">
+                            <span class="regel-zaehler">1 / 4</span>
+                            <h4>Schach, Schachmatt &amp; Patt</h4>
+                            <p>
+                                Steht ein König direkt unter Angriff, steht er im <strong>Schach</strong> und muss die
+                                Drohung sofort abwehren (wegziehen, Figur dazwischenstellen oder Angreifer schlagen).
+                                Gibt es keine Rettung mehr, ist es <strong>Schachmatt</strong>. Steht ein Spieler am Zug
+                                ohne legales Feld, aber sein König ist nicht bedroht, endet die Partie unentschieden (<strong>Patt</strong>).
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Slide 2: Die Rochade -->
+                    <article class="regel-slide slide-2">
+                        <div class="regel-visualisierung">
+                            <label for="regel-1" class="karussell-pfeil" aria-label="Vorherige Regel anzeigen">&#10094;</label>
+                            <div class="mini-regelbrett" role="img" aria-label="Darstellung einer kurzen Rochade">
+                                <span class="feld-hell"></span><span class="feld-dunkel"></span><span class="feld-hell"></span><span class="feld-dunkel"></span>
+                                <span class="feld-dunkel"></span><span class="feld-hell"></span><span class="feld-dunkel"></span><span class="feld-hell"></span>
+                                <span class="feld-hell">&#9823;</span><span class="feld-dunkel">&#9823;</span><span class="feld-hell">&#9823;</span><span class="feld-dunkel">&#9823;</span>
+                                <span class="feld-dunkel"></span><span class="feld-hell">&#9820;</span><span class="feld-dunkel">&#9818;</span><span class="feld-hell"></span>
+                            </div>
+                            <label for="regel-3" class="karussell-pfeil" aria-label="Nächste Regel anzeigen">&#10095;</label>
+                        </div>
+                        <div class="regel-text">
+                            <span class="regel-zaehler">2 / 4</span>
+                            <h4>Die Rochade</h4>
+                            <p>
+                                Die einzige Gelegenheit, bei der sich <strong>zwei Figuren gleichzeitig</strong> bewegen:
+                                Der König wandert zwei Felder auf einen Turm zu, der Turm springt auf das Feld daneben.
+                                Bedingung: Weder König noch Turm wurden vorher bewegt, alle Felder dazwischen sind frei
+                                und der König steht weder im Schach noch zieht er über ein bedrohtes Feld.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Slide 3: Bauernumwandlung & En passant -->
+                    <article class="regel-slide slide-3">
+                        <div class="regel-visualisierung">
+                            <label for="regel-2" class="karussell-pfeil" aria-label="Vorherige Regel anzeigen">&#10094;</label>
+                            <div class="mini-regelbrett" role="img" aria-label="Darstellung einer Bauernumwandlung zur Dame">
+                                <span class="feld-hell"></span><span class="feld-dunkel">&#9819;</span><span class="feld-hell"></span><span class="feld-dunkel"></span>
+                                <span class="feld-dunkel"></span><span class="feld-hell">&#9823;</span><span class="feld-dunkel"></span><span class="feld-hell"></span>
+                                <span class="feld-hell"></span><span class="feld-dunkel"></span><span class="feld-hell"></span><span class="feld-dunkel"></span>
+                                <span class="feld-dunkel"></span><span class="feld-hell"></span><span class="feld-dunkel"></span><span class="feld-hell"></span>
+                            </div>
+                            <label for="regel-4" class="karussell-pfeil" aria-label="Nächste Regel anzeigen">&#10095;</label>
+                        </div>
+                        <div class="regel-text">
+                            <span class="regel-zaehler">3 / 4</span>
+                            <h4>Bauernumwandlung &amp; En passant</h4>
+                            <p>
+                                Erreicht ein Bauer die gegnerische Grundreihe, muss er sofort in eine Dame, einen Turm,
+                                einen Läufer oder einen Springer umgewandelt werden. Zieht außerdem ein gegnerischer Bauer
+                                per Doppelschritt direkt neben deinen Bauern, darfst du ihn im <strong>direkten Gegenzug</strong>
+                                schlagen, als wäre er nur ein Feld weit gerückt (<em>En passant</em>).
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Slide 4: Die 3 goldenen Eröffnungsregeln -->
+                    <article class="regel-slide slide-4">
+                        <div class="regel-visualisierung">
+                            <label for="regel-3" class="karussell-pfeil" aria-label="Vorherige Regel anzeigen">&#10094;</label>
+                            <div class="mini-regelbrett" role="img" aria-label="Zentrumskontrolle und Figurenentwicklung in der Eröffnung">
+                                <span class="feld-hell"></span><span class="feld-dunkel">&#9823;</span><span class="feld-hell">&#9821;</span><span class="feld-dunkel"></span>
+                                <span class="feld-dunkel">&#9822;</span><span class="feld-hell">&#9823;</span><span class="feld-dunkel"></span><span class="feld-hell"></span>
+                                <span class="feld-hell"></span><span class="feld-dunkel"></span><span class="feld-hell">&#9823;</span><span class="feld-dunkel"></span>
+                                <span class="feld-dunkel"></span><span class="feld-hell">&#9822;</span><span class="feld-dunkel">&#9821;</span><span class="feld-hell"></span>
+                            </div>
+                            <label for="regel-1" class="karussell-pfeil" aria-label="Nächste Regel anzeigen">&#10095;</label>
+                        </div>
+                        <div class="regel-text">
+                            <span class="regel-zaehler">4 / 4</span>
+                            <h4>Eröffnung, Mittelspiel &amp; Endspiel</h4>
+                            <p>
+                                Für deinen perfekten Start gelten drei Grundprinzipien: <strong>1. Zentrum besetzen</strong>
+                                (z. B. mit e4/d4 oder c5 in der Sizilianischen Verteidigung), <strong>2. Springer und Läufer
+                                früh entwickeln</strong>, statt dieselbe Figur zweimal zu ziehen, und <strong>3. früh rochieren</strong>,
+                                um deinen König in Sicherheit zu bringen.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ==================== Bereich 3: Weiterlernen & Links ==================== -->
+            <section class="lernen-links-bereich" aria-labelledby="lernen-links-titel">
+                <h3 id="lernen-links-titel" class="lernen-abschnitt-titel">Weiterlernen &amp; Mitspielen</h3>
+                <ul class="lernen-linkliste">
+                    <li>
+                        <a href="termine.html" class="recht-link">Trainingsabende &amp; Eröffnungs-Workshops ansehen</a>
+                        <span>– Komm mittwochs ab 18:00 Uhr in Hörsaal 214 vorbei und probiere dein Wissen direkt am Brett aus.</span>
+                    </li>
+                    <li>
+                        <a href="anmeldung.html#schnuppern-titel" class="recht-link">Unverbindlich zum Schnuppertraining vorbeikommen</a>
+                        <span>– Ohne Anmeldung, Bretter und Uhren stehen am Campus bereit.</span>
+                    </li>
+                    <li>
+                        <a href="kontakt.html" class="recht-link">Nils (Ansprechpartner für Neumitglieder) fragen</a>
+                        <span>– Wenn du dir unsicher bei Regeln bist oder Begleitung beim Einstieg suchst.</span>
+                    </li>
+                    <li>
+                        <a href="rangliste.html" class="recht-link">Aktuelle Standard- und Blitz-Elo-Rangliste ansehen</a>
+                        <span>– Schau dir an, wer an der DHBW Heidenheim aktuell an den Brettern führt.</span>
+                    </li>
+                </ul>
+            </section>
+        </section>
     </main>
     <footer class="site-footer">
         <p>© 2026 Projektarbeit | Adrian, Jeremy, Nicolas &amp; Nils | DHBW Heidenheim</p>
