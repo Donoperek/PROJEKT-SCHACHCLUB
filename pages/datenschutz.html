@@ -3,39 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
 
     <title>Datenschutz | DHBW Schachclub</title>
 
     <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- CSS-only Schalter für System-/Dark-/Light-Mode und Sprache -->
+    <input type="checkbox" id="theme-toggle" class="visually-hidden">
+    <input type="radio" name="sprache" id="lang-de" class="visually-hidden" checked>
+    <input type="radio" name="sprache" id="lang-en" class="visually-hidden">
     <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 
     <header class="site-header">
-        <a href="../index.html" class="logo">
-            <img src="../assets/icons/logo_transparent_weiß.png" alt="DHBW Schachclub Logo">
-        </a>
+        <div class="header-marke">
+            <a href="../index.html" class="logo">
+                <img src="../assets/icons/logo_transparent_weiss.png" alt="Schachclub HDH Logo" class="logo-dark">
+                <img src="../assets/icons/logo_transparent.png" alt="Schachclub HDH Logo" class="logo-light">
+            </a>
+            <h1><span class="titel-schachclub">Schachclub HDH</span></h1>
+        </div>
 
-        <h1>
-            <span class="titel-schachclub">Schachclub</span>
-            <span class="titel-dhbw">DHBW</span>
-        </h1>
+        <div class="header-aktionen">
+            <label for="theme-toggle" class="header-theme-btn">
+                <span class="theme-zu-light">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                    </svg>
+                    <span>Light Mode</span>
+                </span>
+                <span class="theme-zu-dark">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                    <span>Dark Mode</span>
+                </span>
+            </label>
 
-        <details class="site-menu">
-            <summary class="Menü">Menü</summary>
+            <details class="site-menu">
+                <summary class="Menü">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                    <span>Menü</span>
+                </summary>
+                <nav aria-label="Hauptnavigation">
+                    <ul class="nav-list">
+                        <li><a href="ueber-uns.html">Über uns</a></li>
+                        <li><a href="rangliste.html">Rangliste</a></li>
+                        <li><a href="termine.html">Termine</a></li>
+                        <li><a href="lernen.html">Schach lernen</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                        <li><a href="anmeldung.html">Anmeldung</a></li>
+                    </ul>
+                </nav>
+            </details>
 
-            <nav aria-label="Hauptnavigation">
-                <ul class="nav-list">
-                    <li><a href="ueber-uns.html">Über uns</a></li>
-                    <li><a href="rangliste.html">Rangliste</a></li>
-                    <li><a href="termine.html">Termine</a></li>
-                    <li><a href="schachlernen.html">Schach lernen</a></li>
-                    <li><a href="anmeldung.html">Anmeldung</a></li>
-                </ul>
-            </nav>
-        </details>
+            <div class="header-sprache" role="group" aria-label="Sprache wählen">
+                <label for="lang-de" class="sprache-option sprache-de">Deutsch</label>
+                <span class="sprache-trenner" aria-hidden="true">/</span>
+                <label for="lang-en" class="sprache-option sprache-en">English</label>
+            </div>
+        </div>
     </header>
+    <p class="sprache-hinweis" role="status">
+        English version coming soon – this student project is currently available in German.
+    </p>
 
     <aside class="projekt-hinweis" aria-label="Hinweis zum Projekt">
         Hinweis: Dies ist ein fiktives Websiteprojekt im Rahmen der
@@ -71,10 +108,10 @@
                         Projektgruppe „DHBW Schachclub“ (Adrian, Jeremy, Nicolas &amp; Nils):
                     </p>
                     <address>
-                        DHBW Schachclub (fiktive Hochschulgruppe)<br>
+                        DHBW Schachcluby<br>
                         c/o Duale Hochschule Baden-Württemberg Heidenheim<br>
-                        Marienstraße 20, 89518 Heidenheim an der Brenz<br>
-                        E-Mail: <a href="mailto:schachclub@dhbw-heidenheim-beispiel.de" class="recht-link">schachclub@dhbw-heidenheim-beispiel.de</a>
+                        Hanns-Voith-Campus 1, 89520 Heidenheim an der Brenz<br>
+                        E-Mail: <a href="mailto:stanaszeka.wwi26@student.dhbw-heidenheim.de" class="recht-link">schachclub@dhbw-heidenheim-beispiel.de</a>
                     </address>
                     <p>
                         Weitere Angaben findest du im <a href="impressum.html" class="recht-link">Impressum</a>
@@ -83,18 +120,24 @@
                 </article>
 
                 <article class="recht-karte">
-                    <h3>2. Bereitstellung der Website &amp; Server-Logfiles</h3>
+                    <h3>2. Hosting über GitHub Pages &amp; Server-Logfiles</h3>
                     <p>
-                        Diese Website wird rein mit HTML5 und CSS ohne JavaScript betrieben. Beim Aufruf
-                        über einen Webserver können technisch bedingt folgende Daten kurzzeitig in
-                        Server-Logfiles erfasst werden, um einen sicheren Betrieb zu gewährleisten:
+                        Diese Website wird rein mit HTML5 und CSS ohne JavaScript betrieben und über
+                        <strong>GitHub Pages</strong> (GitHub, Inc., 88 Colin P. Kelly Jr. St, San Francisco, CA 94107, USA)
+                        bereitgestellt. Beim Aufruf der Seiten erfasst GitHub technisch bedingt Server-Logfiles, um
+                        einen sicheren und zuverlässigen Betrieb zu gewährleisten:
                     </p>
                     <ul>
                         <li>Aufgerufene Seite und Zeitpunkt des Zugriffs</li>
                         <li>Übertragene Datenmenge und Statuscode</li>
                         <li>Verwendeter Browsertyp und Betriebssystem</li>
-                        <li>Anonymisierte bzw. kurzzeitig gespeicherte IP-Adresse</li>
+                        <li>IP-Adresse des anfragenden Geräts</li>
                     </ul>
+                    <p>
+                        Die Datenverarbeitung durch GitHub erfolgt auf Grundlage des EU-US Data Privacy Framework.
+                        Weitere Informationen findest du in der
+                        <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" class="recht-link" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von GitHub</a>.
+                    </p>
                 </article>
 
                 <article class="recht-karte">
@@ -102,9 +145,10 @@
                     <p>
                         Die Formulare auf der <a href="anmeldung.html" class="recht-link">Anmeldeseite</a>
                         und der <a href="kontakt.html" class="recht-link">Kontaktseite</a> dienen aktuell
-                        ausschließlich als Vorschau für künftige Ausbaustufen (z. B. Turnier-Auslosungen,
-                        Verteiler-Aufnahme oder Platzreservierungen für Hörsaal 214). Eingegebene Daten werden
-                        derzeit weder an einen Server gesendet noch gespeichert.
+                        ausschließlich als statische Vorschau für künftige Ausbaustufen (z. B. Turnier-Auslosungen,
+                        Verteiler-Aufnahme oder Platzreservierungen für Raum A4.14). Eingegebene Daten werden
+                        derzeit weder an einen Server gesendet noch dauerhaft gespeichert, sondern nur lokal im
+                        Browser verarbeitet.
                     </p>
                 </article>
 
@@ -112,18 +156,19 @@
                     <h3>4. Hochschul-Rangliste &amp; Team-Fotos</h3>
                     <p>
                         Die Werte in der <a href="rangliste.html" class="recht-link">Hochschul-Rangliste</a>
-                        (Standard- und Blitz-Elo) sind Beispieldaten zu Demonstrationszwecken. Personenbezogene
+                        (Schnellschach- und Blitz-Elo) sind Beispieldaten zu Demonstrationszwecken. Personenbezogene
                         Porträts auf der Kontaktseite werden ausschließlich mit Einwilligung der jeweiligen
                         Projektmitglieder im Rahmen der Vorlesungspräsentation angezeigt.
                     </p>
                 </article>
 
                 <article class="recht-karte">
-                    <h3>5. Schriftarten</h3>
+                    <h3>5. Externe Links</h3>
                     <p>
-                        Zur einheitlichen Darstellung wird die Schriftart „Montserrat“ eingebunden. Sofern kein
-                        externer Abruf erfolgt oder gewünscht ist, greift die Website automatisch auf
-                        lokale Systemschriften zurück.
+                        Auf der Seite <a href="lernen.html" class="recht-link">Schach lernen</a> verlinken wir
+                        auf externe Lernangebote (z. B. Chess.com und YouTube). Erst beim aktiven Anklicken eines
+                        solchen Links verlässt du unsere Website; ab diesem Zeitpunkt gelten die
+                        Datenschutzbestimmungen des jeweiligen Anbieters.
                     </p>
                 </article>
 

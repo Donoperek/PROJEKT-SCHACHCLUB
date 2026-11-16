@@ -25,7 +25,7 @@
 }
 
 .schachclub-einleitung h2 {
-  margin: 0 0 0.75rem;
+  margin: 1rem 0 0.75rem;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
 }
 
@@ -35,19 +35,24 @@
 }
 
 .interessen-bereich > h2 {
-  margin: 2.5rem 0 1.25rem;
+  margin: 2.5rem 0 2rem;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
 }
 
 /* ==================== Rangliste ==================== */
 
 .rangliste-seite {
-  max-width: 1180px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 3rem 1rem 4rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 0 1.75rem;
+  align-items: start;
 }
 
 .rangliste-kopf {
+  grid-column: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
@@ -57,18 +62,26 @@
 }
 
 /* CSS-only Switch zwischen Standard- und Blitz-Rangliste */
+/* Inputs im Viewport fixieren, damit beim Klicken nicht nach oben gescrollt wird */
+#modus-standard,
+#modus-blitz {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 .ranglisten-switch {
   display: inline-flex;
   gap: 0.35rem;
   border-radius: 0.5rem;
   padding: 0.35rem;
-  background-color: var(--farbe-icon-dunkel);
+  background-color: var(--theme-oberflaeche-tief);
 }
 
 .switch-option {
   padding: 0.55rem 1.15rem;
   border-radius: 0.5rem;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
@@ -76,8 +89,8 @@
 }
 
 .switch-option:hover {
-  background-color: var(--farbe-icon);
-  color: var(--farbe-weiss);
+  background-color: var(--theme-oberflaeche-hover);
+  color: var(--theme-text);
 }
 
 #modus-standard:checked ~ .rangliste-kopf label[for="modus-standard"],
@@ -88,12 +101,15 @@
 
 #modus-standard:focus-visible ~ .rangliste-kopf label[for="modus-standard"],
 #modus-blitz:focus-visible ~ .rangliste-kopf label[for="modus-blitz"] {
-  outline: 3px solid var(--farbe-rot-kontrast);
+  outline: 3px solid var(--theme-akzent-kontrast);
   outline-offset: 2px;
 }
 
 .rangliste-panel {
   display: none;
+  grid-column: 1;
+  grid-row: 2;
+  min-width: 0;
 }
 
 #modus-standard:checked ~ .rangliste-panel-standard,
@@ -104,7 +120,7 @@
 .rangliste-kicker,
 .anmeldung-kicker {
   margin: 0 0 0.35rem;
-  color: var(--farbe-rot-kontrast);
+  color: var(--theme-akzent-kontrast);
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -118,14 +134,14 @@
 
 .rangliste-untertitel {
   margin: 0.5rem 0 0;
-  color: var(--farbe-text-gedaempft);
+  color: var(--theme-text-gedaempft);
 }
 
 .ranglisten-tabelle {
   overflow: hidden;
-  border: 0;
+  border: 1px solid var(--theme-rahmen);
   border-radius: 1rem;
-  background-color: var(--farbe-rangliste-zeile);
+  background-color: var(--theme-oberflaeche);
 }
 
 .ranglisten-tabelle-kopf {
@@ -134,7 +150,7 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1.25rem 1.5rem;
-  background-color: var(--farbe-icon-dunkel);
+  background-color: var(--theme-oberflaeche-tief);
 }
 
 .ranglisten-tabelle-kopf h3 {
@@ -144,7 +160,7 @@
 
 .ranglisten-fussnote {
   margin: 1.25rem 0 0;
-  color: var(--farbe-rangliste-text-grau);
+  color: var(--theme-text-rangliste-grau);
   font-size: 0.85rem;
 }
 
@@ -155,9 +171,18 @@
 .ranglisten-tabelle table {
   width: 100%;
   min-width: 900px;
+  table-layout: fixed;
   border-collapse: collapse;
   text-align: left;
 }
+
+/* Feste Spaltenbreiten verhindern das Verrutschen beim Wechsel zwischen Standard und Blitz */
+.ranglisten-tabelle th:nth-child(1) { width: 13%; }
+.ranglisten-tabelle th:nth-child(2) { width: 29%; }
+.ranglisten-tabelle th:nth-child(3) { width: 14%; }
+.ranglisten-tabelle th:nth-child(4) { width: 12%; }
+.ranglisten-tabelle th:nth-child(5) { width: 16%; }
+.ranglisten-tabelle th:nth-child(6) { width: 16%; }
 
 .ranglisten-tabelle th,
 .ranglisten-tabelle td {
@@ -166,19 +191,23 @@
   white-space: nowrap;
 }
 
+.ranglisten-tabelle td {
+  font-variant-numeric: tabular-nums;
+}
+
 .ranglisten-tabelle th {
-  color: var(--farbe-rangliste-text-grau);
+  color: var(--theme-text-rangliste-grau);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .ranglisten-tabelle tbody tr:nth-child(even) {
-  background-color: var(--farbe-rangliste-zeile-gerade);
+  background-color: var(--theme-oberflaeche-alt);
 }
 
 .ranglisten-tabelle tbody tr:nth-child(odd):not(.ranglisten-sieger) {
-  background-color: var(--farbe-rangliste-zeile);
+  background-color: var(--theme-oberflaeche);
 }
 
 .platz {
@@ -188,8 +217,8 @@
   margin-right: 0.6rem;
   place-items: center;
   border-radius: 0.5rem;
-  background-color: var(--farbe-platz-hintergrund);
-  color: var(--farbe-rangliste-text-grau);
+  background-color: var(--theme-oberflaeche-tief);
+  color: var(--theme-text-rangliste-grau);
   font-weight: 700;
 }
 
@@ -209,16 +238,16 @@
 }
 
 .trend {
-  color: var(--farbe-rangliste-text-grau);
+  color: var(--theme-text-rangliste-grau);
   font-size: 0.75rem;
 }
 
 .trend-auf {
-  color: var(--farbe-rangliste-gruen);
+  color: var(--theme-gruen);
 }
 
 .trend-ab {
-  color: var(--farbe-rot-kontrast);
+  color: var(--theme-akzent-kontrast);
 }
 
 .spieler {
@@ -257,9 +286,9 @@
 
 .kurs {
   padding: 0.45rem 0.65rem;
-  border: 1px solid var(--farbe-rangliste-rahmen);
+  border: 1px solid var(--theme-rahmen-akzent);
   border-radius: 0.4rem;
-  color: var(--farbe-rangliste-text-grau);
+  color: var(--theme-text-rangliste-grau);
   font-size: 0.75rem;
   font-weight: 600;
 }
@@ -270,11 +299,11 @@
 }
 
 .bilanz strong {
-  color: var(--farbe-rangliste-gruen);
+  color: var(--theme-gruen);
 }
 
 .bilanz b {
-  color: var(--farbe-rot-kontrast);
+  color: var(--theme-akzent-kontrast);
 }
 
 .form {
@@ -295,6 +324,106 @@
 
 .form .form-niederlage {
   background-color: var(--farbe-rot-kontrast);
+}
+
+/* Statistik-Sidebar neben der Rangliste */
+.rangliste-statistik {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  margin-top: 2.9rem;
+  padding: 1.75rem 1.25rem;
+  border: 1px solid var(--theme-rahmen);
+  border-radius: 1rem;
+  background-color: var(--theme-oberflaeche);
+  text-align: center;
+}
+
+.stat-eintrag {
+  display: grid;
+  justify-items: center;
+  gap: 0.45rem;
+}
+
+.stat-eintrag + .stat-eintrag {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--theme-rahmen);
+}
+
+.stat-icon {
+  margin-bottom: 0.25rem;
+}
+
+.stat-icon-bauer {
+  color: var(--theme-gruen);
+}
+
+.stat-icon-heute {
+  color: var(--theme-icon-gold);
+}
+
+.stat-icon-gerade {
+  color: var(--theme-akzent-kontrast);
+}
+
+.stat-zahl {
+  margin: 0;
+  color: var(--theme-text);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  margin: 0;
+  color: var(--theme-text-rangliste-grau);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1180px) {
+  .rangliste-seite {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem 0;
+  }
+
+  .rangliste-kopf {
+    padding-bottom: 0;
+  }
+
+  .rangliste-statistik {
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .stat-eintrag + .stat-eintrag {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .stat-eintrag:nth-child(n + 3) {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--theme-rahmen);
+  }
+}
+
+@media (max-width: 520px) {
+  .rangliste-statistik {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-eintrag + .stat-eintrag {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--theme-rahmen);
+  }
 }
 
 /* ==================== Anmeldung ==================== */
@@ -329,13 +458,13 @@
 .anmeldung-untertitel,
 .anmeldung-hinweistext {
   margin: 0;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   line-height: 1.6;
 }
 
 .anmeldung-hinweistext a,
 .faq-eintrag a {
-  color: var(--farbe-rot-kontrast);
+  color: var(--theme-akzent-kontrast);
   font-weight: 600;
   text-underline-offset: 3px;
 }
@@ -347,8 +476,9 @@
 }
 
 .faq-eintrag {
+  border: 1px solid var(--theme-rahmen);
   border-radius: 0.75rem;
-  background-color: var(--farbe-rangliste-zeile);
+  background-color: var(--theme-oberflaeche);
   padding: 0.9rem 1.15rem;
 }
 
@@ -359,27 +489,28 @@
 }
 
 .faq-eintrag summary:focus-visible {
-  outline: 3px solid var(--farbe-rot-kontrast);
+  outline: 3px solid var(--theme-akzent-kontrast);
   outline-offset: 4px;
   border-radius: 4px;
 }
 
 .faq-eintrag p {
   margin: 0.75rem 0 0.25rem;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   line-height: 1.6;
 }
 
 /* Schnuppern-Box */
 .schnuppern-karte {
   padding: 1.5rem;
+  border: 1px solid var(--theme-rahmen);
   border-radius: 0.75rem;
-  background-color: var(--farbe-icon-dunkel);
+  background-color: var(--theme-oberflaeche-tief);
 }
 
 .schnuppern-karte p {
   margin: 0;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   line-height: 1.6;
 }
 
@@ -395,11 +526,11 @@
   padding: 0.7rem 1.25rem;
   border: 2px solid var(--farbe-rot);
   border-radius: 0.5rem;
-  color: var(--farbe-weiss);
+  color: var(--theme-text);
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 #schnupper-toggle:checked ~ .schnupper-bestaetigung {
@@ -407,22 +538,23 @@
 }
 
 #schnupper-toggle:focus-visible ~ .schnuppern-aktionen .schnuppern-button {
-  outline: 3px solid var(--farbe-rot-kontrast);
+  outline: 3px solid var(--theme-akzent-kontrast);
   outline-offset: 3px;
 }
 
 .schnuppern-button:hover {
   background-color: var(--farbe-rot);
   border-color: var(--farbe-rot-hell);
+  color: var(--farbe-weiss);
 }
 
 .schnuppern-button:focus-visible {
-  outline: 3px solid var(--farbe-rot-kontrast);
+  outline: 3px solid var(--theme-akzent-kontrast);
   outline-offset: 3px;
 }
 
 .schnuppern-hinweis-klein {
-  color: var(--farbe-text-gedaempft);
+  color: var(--theme-text-gedaempft);
   font-size: 0.85rem;
 }
 
@@ -430,14 +562,14 @@
   margin: 0;
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--farbe-weiss);
+  color: var(--theme-text);
 }
 
 .formular-fieldset {
   padding: 0.95rem 1.1rem;
-  border: 1px solid var(--farbe-icon);
+  border: 1px solid var(--theme-rahmen);
   border-radius: 0.6rem;
-  background-color: var(--farbe-icon-dunkel);
+  background-color: var(--theme-oberflaeche-tief);
 }
 
 .checkbox-gruppe {
@@ -451,7 +583,7 @@
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   font-size: 0.95rem;
 }
 
@@ -463,14 +595,14 @@
 }
 
 .checkbox-label input[type="checkbox"]:focus-visible {
-  outline: 3px solid var(--farbe-rot-kontrast);
+  outline: 3px solid var(--theme-akzent-kontrast);
   outline-offset: 2px;
 }
 
 .anmeldung-hinweistext a:focus-visible,
 .faq-eintrag a:focus-visible,
 .bestaetigung-schliessen:focus-visible {
-  outline: 3px solid var(--farbe-rot-kontrast);
+  outline: 3px solid var(--theme-akzent-kontrast);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -495,7 +627,7 @@
 .formular-feld label {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--farbe-weiss);
+  color: var(--theme-text);
 }
 
 .formular-feld input,
@@ -504,24 +636,24 @@
   width: 100%;
   box-sizing: border-box;
   padding: 0.95rem 1.1rem;
-  border: 1px solid var(--farbe-icon);
+  border: 1px solid var(--theme-rahmen);
   border-radius: 0.6rem;
-  background-color: var(--farbe-icon-dunkel);
-  color: var(--farbe-weiss);
+  background-color: var(--theme-oberflaeche-tief);
+  color: var(--theme-text);
   font-family: inherit;
   font-size: 1rem;
 }
 
 .formular-feld input::placeholder,
 .formular-feld textarea::placeholder {
-  color: var(--farbe-text-gedaempft);
+  color: var(--theme-text-gedaempft);
 }
 
 .formular-feld input:focus-visible,
 .formular-feld select:focus-visible,
 .formular-feld textarea:focus-visible {
   outline: none;
-  border-color: var(--farbe-rot-kontrast);
+  border-color: var(--theme-akzent-kontrast);
 }
 
 .anmelde-button {
@@ -543,7 +675,7 @@
 }
 
 .anmelde-button:focus-visible {
-  outline: 3px solid var(--farbe-rot-kontrast);
+  outline: 3px solid var(--theme-akzent-kontrast);
   outline-offset: 3px;
 }
 
@@ -552,7 +684,7 @@
   display: none;
   padding: 1.15rem 1.35rem;
   border-radius: 0.75rem;
-  background-color: var(--farbe-icon-dunkel);
+  background-color: var(--theme-oberflaeche-tief);
   border: 2px solid var(--farbe-rot);
   gap: 0.75rem;
 }
@@ -568,7 +700,7 @@
 
 .bestaetigung-schliessen {
   justify-self: start;
-  color: var(--farbe-rot-kontrast);
+  color: var(--theme-akzent-kontrast);
   font-weight: 600;
   cursor: pointer;
 }
@@ -611,7 +743,7 @@
 .lernen-einleitung {
   margin: 0.25rem 0 0;
   max-width: 72ch;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   line-height: 1.65;
   font-size: 1.05rem;
 }
@@ -620,7 +752,7 @@
 .termin-link:focus-visible,
 .recht-link:focus-visible,
 .team-mail:focus-visible {
-  outline: 2px solid var(--farbe-rot-kontrast);
+  outline: 2px solid var(--theme-akzent-kontrast);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -646,7 +778,7 @@
   margin: 0;
   border-radius: 0.75rem;
   overflow: hidden;
-  background-color: var(--farbe-icon-dunkel);
+  background-color: var(--theme-oberflaeche-tief);
 }
 
 .ueber-uns-bild img {
@@ -663,8 +795,8 @@
   min-height: 240px;
   padding: 2rem;
   box-sizing: border-box;
-  border: 2px dashed var(--farbe-icon);
-  color: var(--farbe-text-gedaempft);
+  border: 2px dashed var(--theme-rahmen);
+  color: var(--theme-text-gedaempft);
   font-size: 0.95rem;
   font-weight: 600;
   text-align: center;
@@ -678,18 +810,18 @@
 .ueber-uns-text h3 {
   margin: 0;
   font-size: clamp(1.25rem, 3vw, 1.6rem);
-  color: var(--farbe-weiss);
+  color: var(--theme-text);
 }
 
 .ueber-uns-text p {
   margin: 0;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   line-height: 1.65;
 }
 
 .ueber-uns-link {
   justify-self: start;
-  color: var(--farbe-rot-kontrast);
+  color: var(--theme-akzent-kontrast);
   font-weight: 600;
   text-underline-offset: 3px;
 }
@@ -725,9 +857,10 @@
 .termin-karte {
   display: grid;
   grid-template-columns: 5.75rem minmax(0, 1fr);
+  border: 1px solid var(--theme-rahmen);
   border-radius: 0.75rem;
   overflow: hidden;
-  background-color: var(--farbe-rangliste-zeile);
+  background-color: var(--theme-oberflaeche);
 }
 
 .termin-datum {
@@ -775,19 +908,19 @@
 .termin-inhalt h3 {
   margin: 0;
   font-size: 1.15rem;
-  color: var(--farbe-weiss);
+  color: var(--theme-text);
 }
 
 .termin-meta {
   margin: 0;
-  color: var(--farbe-rot-kontrast);
+  color: var(--theme-akzent-kontrast);
   font-size: 0.85rem;
   font-weight: 600;
 }
 
 .termin-inhalt p:not(.termin-meta) {
   margin: 0;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   font-size: 0.95rem;
   line-height: 1.55;
 }
@@ -795,7 +928,7 @@
 .termin-link {
   justify-self: start;
   margin-top: 0.25rem;
-  color: var(--farbe-rot-kontrast);
+  color: var(--theme-akzent-kontrast);
   font-size: 0.9rem;
   font-weight: 600;
   text-underline-offset: 3px;
@@ -804,7 +937,7 @@
 /* Trennlinie & Weitere Termine */
 .weitere-termine {
   padding-top: 2rem;
-  border-top: 2px solid var(--farbe-icon);
+  border-top: 2px solid var(--theme-rahmen);
   display: grid;
   gap: 1.25rem;
 }
@@ -812,12 +945,13 @@
 .weitere-termine h3 {
   margin: 0;
   font-size: clamp(1.25rem, 3vw, 1.55rem);
-  color: var(--farbe-weiss);
+  color: var(--theme-text);
 }
 
 .termin-praxis-hinweis {
+  max-width: 62ch;
   margin: 0;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   line-height: 1.6;
 }
 
@@ -835,19 +969,21 @@
   align-items: baseline;
   gap: 0.4rem 1.25rem;
   padding: 0.95rem 1.2rem;
+  border: 1px solid var(--theme-rahmen);
   border-radius: 0.6rem;
-  background-color: var(--farbe-icon-dunkel);
+  background-color: var(--theme-oberflaeche-tief);
 }
 
 .weiteres-datum {
   min-width: 9.5rem;
-  color: var(--farbe-rot-kontrast);
+  color: var(--theme-akzent-kontrast);
   font-weight: 600;
   font-size: 0.95rem;
 }
 
 .weiterer-titel {
-  color: var(--farbe-text-hellgrau);
+  max-width: 62ch;
+  color: var(--theme-text-sekundaer);
   line-height: 1.5;
 }
 
@@ -892,9 +1028,10 @@
 
 .recht-hinweis {
   padding: 1.25rem 1.4rem;
+  border: 1px solid var(--theme-rahmen);
   border-radius: 0.75rem;
-  background-color: var(--farbe-icon-dunkel);
-  color: var(--farbe-text-hellgrau);
+  background-color: var(--theme-oberflaeche-tief);
+  color: var(--theme-text-sekundaer);
   line-height: 1.6;
 }
 
@@ -909,8 +1046,9 @@
 
 .recht-karte {
   padding: 1.4rem 1.5rem;
+  border: 1px solid var(--theme-rahmen);
   border-radius: 0.75rem;
-  background-color: var(--farbe-rangliste-zeile);
+  background-color: var(--theme-oberflaeche);
   display: grid;
   gap: 0.65rem;
 }
@@ -918,28 +1056,28 @@
 .recht-karte h3 {
   margin: 0;
   font-size: 1.2rem;
-  color: var(--farbe-weiss);
+  color: var(--theme-text);
 }
 
 .recht-karte p,
 .recht-karte address {
   margin: 0;
   font-style: normal;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   line-height: 1.65;
 }
 
 .recht-karte ul {
   margin: 0;
   padding-left: 1.25rem;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   line-height: 1.65;
   display: grid;
   gap: 0.35rem;
 }
 
 .recht-link {
-  color: var(--farbe-rot-kontrast);
+  color: var(--theme-akzent-kontrast);
   font-weight: 600;
   text-underline-offset: 3px;
 }
@@ -957,7 +1095,7 @@
 .kontakt-abschnitt-titel {
   margin: 0 0 1.25rem;
   font-size: clamp(1.3rem, 3vw, 1.65rem);
-  color: var(--farbe-weiss);
+  color: var(--theme-text);
 }
 
 .team-raster {
@@ -972,8 +1110,9 @@
   gap: 1.25rem;
   align-items: center;
   padding: 1.25rem;
+  border: 1px solid var(--theme-rahmen);
   border-radius: 0.75rem;
-  background-color: var(--farbe-rangliste-zeile);
+  background-color: var(--theme-oberflaeche);
 }
 
 .team-bild {
@@ -982,7 +1121,7 @@
   height: 120px;
   border-radius: 0.65rem;
   overflow: hidden;
-  background-color: var(--farbe-icon-dunkel);
+  background-color: var(--theme-oberflaeche-tief);
 }
 
 .team-bild img {
@@ -1001,19 +1140,19 @@
 .team-info h4 {
   margin: 0;
   font-size: 1.2rem;
-  color: var(--farbe-weiss);
+  color: var(--theme-text);
 }
 
 .team-rolle {
   margin: 0;
-  color: var(--farbe-rot-kontrast);
+  color: var(--theme-akzent-kontrast);
   font-size: 0.85rem;
   font-weight: 600;
 }
 
 .team-beschreibung {
   margin: 0;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   font-size: 0.92rem;
   line-height: 1.55;
 }
@@ -1021,7 +1160,7 @@
 .team-mail {
   justify-self: start;
   margin-top: 0.2rem;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none;
@@ -1029,7 +1168,7 @@
 }
 
 .team-mail:hover {
-  color: var(--farbe-rot-kontrast);
+  color: var(--theme-akzent-kontrast);
 }
 
 .kontakt-unten {
@@ -1041,8 +1180,9 @@
 
 .kontakt-info-box {
   padding: 1.5rem;
+  border: 1px solid var(--theme-rahmen);
   border-radius: 0.75rem;
-  background-color: var(--farbe-icon-dunkel);
+  background-color: var(--theme-oberflaeche-tief);
   display: grid;
   gap: 1rem;
 }
@@ -1051,7 +1191,7 @@
 .kontakt-formular-box h3 {
   margin: 0;
   font-size: 1.35rem;
-  color: var(--farbe-weiss);
+  color: var(--theme-text);
 }
 
 .kontakt-datenliste {
@@ -1065,19 +1205,20 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--farbe-rot-kontrast);
+  color: var(--theme-akzent-kontrast);
 }
 
 .kontakt-datenliste dd {
   margin: 0.2rem 0 0;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   line-height: 1.55;
 }
 
 .kontakt-formular-box {
   padding: 1.5rem;
+  border: 1px solid var(--theme-rahmen);
   border-radius: 0.75rem;
-  background-color: var(--farbe-rangliste-zeile);
+  background-color: var(--theme-oberflaeche);
   display: grid;
   gap: 1.15rem;
 }
@@ -1114,7 +1255,7 @@
 .lernen-abschnitt-titel {
   margin: 0 0 1.25rem;
   font-size: clamp(1.3rem, 3vw, 1.65rem);
-  color: var(--farbe-weiss);
+  color: var(--theme-text);
 }
 
 .figuren-buehne {
@@ -1135,7 +1276,6 @@
   grid-template-columns: repeat(8, minmax(0, 1fr));
   width: 100%;
   aspect-ratio: 1 / 1;
-  border: 3px solid var(--farbe-icon-dunkel);
   border-radius: 0.65rem;
   overflow: hidden;
   user-select: none;
@@ -1155,6 +1295,55 @@
 .feld-dunkel {
   background-color: var(--farbe-icon);
 }
+
+/* Koordinaten-Beschriftung (1-8 am linken Rand, a-h am unteren Rand) */
+.brett-feld:nth-child(8n + 1)::before,
+.brett-feld:nth-child(n + 57)::after {
+  position: absolute;
+  z-index: 2;
+  font-size: clamp(0.55rem, 1.35vw, 0.72rem);
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.brett-feld:nth-child(8n + 1)::before {
+  top: 3px;
+  left: 4px;
+}
+
+.brett-feld:nth-child(n + 57)::after {
+  right: 4px;
+  bottom: 3px;
+}
+
+.feld-hell:nth-child(8n + 1)::before,
+.feld-hell:nth-child(n + 57)::after {
+  color: var(--farbe-icon-dunkel);
+}
+
+.feld-dunkel:nth-child(8n + 1)::before,
+.feld-dunkel:nth-child(n + 57)::after {
+  color: var(--farbe-text-hellgrau);
+}
+
+.brett-feld:nth-child(1)::before { content: "8"; }
+.brett-feld:nth-child(9)::before { content: "7"; }
+.brett-feld:nth-child(17)::before { content: "6"; }
+.brett-feld:nth-child(25)::before { content: "5"; }
+.brett-feld:nth-child(33)::before { content: "4"; }
+.brett-feld:nth-child(41)::before { content: "3"; }
+.brett-feld:nth-child(49)::before { content: "2"; }
+.brett-feld:nth-child(57)::before { content: "1"; }
+
+.brett-feld:nth-child(57)::after { content: "a"; }
+.brett-feld:nth-child(58)::after { content: "b"; }
+.brett-feld:nth-child(59)::after { content: "c"; }
+.brett-feld:nth-child(60)::after { content: "d"; }
+.brett-feld:nth-child(61)::after { content: "e"; }
+.brett-feld:nth-child(62)::after { content: "f"; }
+.brett-feld:nth-child(63)::after { content: "g"; }
+.brett-feld:nth-child(64)::after { content: "h"; }
 
 .start-figur,
 .mitte-figur,
@@ -1222,7 +1411,10 @@
   height: 34%;
   border-radius: 50%;
   background-color: var(--farbe-rot);
-  box-shadow: 0 0 0 2px var(--farbe-weiss);
+}
+
+.feld-dunkel .zug-punkt {
+  background-color: var(--farbe-rot-kontrast);
 }
 
 #figur-turm:checked ~ .figuren-buehne .zug-ortho .zug-punkt,
@@ -1269,7 +1461,7 @@
   flex-wrap: wrap;
   gap: 1rem;
   font-size: 0.85rem;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
 }
 
 .legende-punkt {
@@ -1282,19 +1474,21 @@
   width: 0.75rem;
   height: 0.75rem;
   border-radius: 50%;
-  background-color: var(--farbe-rot);
-  box-shadow: 0 0 0 2px var(--farbe-weiss);
+  background-color: var(--theme-akzent-kontrast);
 }
 
 .legende-marker-schlag {
   width: 0.85rem;
   height: 0.85rem;
-  border: 2px solid var(--farbe-rot-kontrast);
+  border: 2px solid var(--theme-akzent-kontrast);
   border-radius: 2px;
 }
 
 .brett-reset-btn {
-  display: none;
+  display: inline-block;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
   padding: 0.5rem 0.9rem;
   border-radius: 0.45rem;
   background-color: var(--farbe-rot);
@@ -1302,7 +1496,7 @@
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
 }
 
 .brett-reset-btn:hover {
@@ -1315,7 +1509,9 @@
 #figur-laeufer:checked ~ .figuren-buehne .brett-reset-btn,
 #figur-springer:checked ~ .figuren-buehne .brett-reset-btn,
 #figur-bauer:checked ~ .figuren-buehne .brett-reset-btn {
-  display: inline-block;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .figuren-schnellwahl {
@@ -1326,9 +1522,10 @@
 
 .schnellwahl-chip {
   padding: 0.45rem 0.55rem;
+  border: 1px solid var(--theme-rahmen);
   border-radius: 0.4rem;
-  background-color: var(--farbe-icon-dunkel);
-  color: var(--farbe-text-hellgrau);
+  background-color: var(--theme-oberflaeche-tief);
+  color: var(--theme-text-sekundaer);
   font-size: 0.78rem;
   font-weight: 600;
   text-align: center;
@@ -1337,8 +1534,8 @@
 }
 
 .schnellwahl-chip:hover {
-  background-color: var(--farbe-icon);
-  color: var(--farbe-weiss);
+  background-color: var(--theme-oberflaeche-hover);
+  color: var(--theme-text);
 }
 
 #figur-koenig:checked ~ .figuren-buehne label[for="figur-koenig"].schnellwahl-chip,
@@ -1348,6 +1545,7 @@
 #figur-springer:checked ~ .figuren-buehne label[for="figur-springer"].schnellwahl-chip,
 #figur-bauer:checked ~ .figuren-buehne label[for="figur-bauer"].schnellwahl-chip {
   background-color: var(--farbe-rot);
+  border-color: var(--farbe-rot);
   color: var(--farbe-weiss);
 }
 
@@ -1358,7 +1556,7 @@
 #figur-springer:focus-visible ~ .figuren-buehne label[for="figur-springer"].schnellwahl-chip,
 #figur-bauer:focus-visible ~ .figuren-buehne label[for="figur-bauer"].schnellwahl-chip,
 #figur-start:focus-visible ~ .figuren-buehne .schachbrett {
-  outline: 2px solid var(--farbe-rot-kontrast);
+  outline: 2px solid var(--theme-akzent-kontrast);
   outline-offset: 3px;
 }
 
@@ -1366,8 +1564,9 @@
 .figur-info-karte {
   display: none;
   padding: 1.5rem;
+  border: 1px solid var(--theme-rahmen);
   border-radius: 0.75rem;
-  background-color: var(--farbe-rangliste-zeile);
+  background-color: var(--theme-oberflaeche);
   gap: 1rem;
 }
 
@@ -1391,7 +1590,7 @@
 .figur-info-kopf h4 {
   margin: 0;
   font-size: clamp(1.25rem, 3vw, 1.6rem);
-  color: var(--farbe-weiss);
+  color: var(--theme-text);
 }
 
 .figur-icon-badge {
@@ -1407,14 +1606,14 @@
 
 .figur-info-karte p {
   margin: 0;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   line-height: 1.65;
 }
 
 .figur-merkmale {
   margin: 0;
   padding-left: 1.2rem;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   line-height: 1.6;
   display: grid;
   gap: 0.45rem;
@@ -1427,8 +1626,9 @@
   gap: 2rem;
   align-items: center;
   padding: 1.5rem;
+  border: 1px solid var(--theme-rahmen);
   border-radius: 0.75rem;
-  background-color: var(--farbe-rangliste-zeile);
+  background-color: var(--theme-oberflaeche);
 }
 
 #regel-1:checked ~ .regeln-karussell .slide-1,
@@ -1442,7 +1642,7 @@
 #regel-2:focus-visible ~ .regeln-karussell,
 #regel-3:focus-visible ~ .regeln-karussell,
 #regel-4:focus-visible ~ .regeln-karussell {
-  outline: 2px solid var(--farbe-rot-kontrast);
+  outline: 2px solid var(--theme-akzent-kontrast);
   outline-offset: 4px;
   border-radius: 0.75rem;
 }
@@ -1460,15 +1660,16 @@
   width: 2.35rem;
   height: 2.35rem;
   border-radius: 50%;
-  background-color: var(--farbe-icon-dunkel);
-  color: var(--farbe-weiss);
+  background-color: var(--theme-oberflaeche-tief);
+  color: var(--theme-text);
   font-size: 1.15rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .karussell-pfeil:hover {
   background-color: var(--farbe-rot);
+  color: var(--farbe-weiss);
 }
 
 .mini-regelbrett {
@@ -1498,7 +1699,7 @@
 }
 
 .regel-zaehler {
-  color: var(--farbe-rot-kontrast);
+  color: var(--theme-akzent-kontrast);
   font-size: 0.85rem;
   font-weight: 600;
 }
@@ -1506,19 +1707,19 @@
 .regel-text h4 {
   margin: 0;
   font-size: 1.35rem;
-  color: var(--farbe-weiss);
+  color: var(--theme-text);
 }
 
 .regel-text p {
   margin: 0;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   line-height: 1.65;
 }
 
 /* Bereich 3: Weiterlernen-Linkliste */
 .lernen-links-bereich {
   padding-top: 2rem;
-  border-top: 2px solid var(--farbe-icon);
+  border-top: 2px solid var(--theme-rahmen);
 }
 
 .lernen-linkliste {
@@ -1526,7 +1727,7 @@
   padding-left: 1.25rem;
   display: grid;
   gap: 0.8rem;
-  color: var(--farbe-text-hellgrau);
+  color: var(--theme-text-sekundaer);
   line-height: 1.6;
 }
 

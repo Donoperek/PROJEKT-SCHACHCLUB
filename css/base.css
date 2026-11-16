@@ -1,3 +1,29 @@
+/* ==================== Lokale Schriftarten ==================== */
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/montserrat-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/montserrat-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/montserrat-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ==================== Basis ==================== */
 
 :root {
@@ -27,6 +53,28 @@
   --farbe-bronze: #d96512;
   --farbe-form-remis: #64748b;
 
+  /* Theme-Variablen (Standard: Dark Mode) */
+  --theme-hintergrund: #2f2e2b;
+  --theme-oberflaeche: #242321;
+  --theme-oberflaeche-alt: #292725;
+  --theme-oberflaeche-tief: #1c1b19;
+  --theme-oberflaeche-hover: #3a3936;
+  --theme-text: #ffffff;
+  --theme-text-sekundaer: #d7e0ed;
+  --theme-text-gedaempft: #b7b7b7;
+  --theme-text-rangliste-grau: #9aa8b8;
+  --theme-rahmen: #3a3936;
+  --theme-rahmen-akzent: #2d3b55;
+  --theme-akzent-kontrast: #ff6b6b;
+  --theme-gruen: #10b981;
+  --theme-icon-gold: #f5a900;
+  --theme-karte-hintergrund: #262522;
+  --theme-karte-rahmen: #ffffff;
+  --theme-header: #262522;
+  --theme-header-border: #3a3936;
+  --theme-header-text: #ffffff;
+  --theme-header-text-sekundaer: #d7e0ed;
+
   --font-main: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -34,11 +82,85 @@
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
+/* Manuelles Umschalten in den Light Mode bei dunklem System-Standard */
+:root:has(#theme-toggle:checked) {
+  --theme-hintergrund: #f5f4f0;
+  --theme-oberflaeche: #ffffff;
+  --theme-oberflaeche-alt: #efede8;
+  --theme-oberflaeche-tief: #e5e2dc;
+  --theme-oberflaeche-hover: #d7d3cb;
+  --theme-text: #1c1b19;
+  --theme-text-sekundaer: #33322e;
+  --theme-text-gedaempft: #52504a;
+  --theme-text-rangliste-grau: #4a5568;
+  --theme-rahmen: #d4d0c8;
+  --theme-rahmen-akzent: #cbd5e1;
+  --theme-akzent-kontrast: #8b0000;
+  --theme-gruen: #047857;
+  --theme-icon-gold: #b45309;
+  --theme-karte-hintergrund: #ffffff;
+  --theme-karte-rahmen: #d4d0c8;
+  --theme-header: #ffffff;
+  --theme-header-border: #d4d0c8;
+  --theme-header-text: #1c1b19;
+  --theme-header-text-sekundaer: #4a5568;
+}
+
+/* System-Standard = Light Mode; Schalter kehrt in den Dark Mode um */
+@media (prefers-color-scheme: light) {
+  :root {
+    --theme-hintergrund: #f5f4f0;
+    --theme-oberflaeche: #ffffff;
+    --theme-oberflaeche-alt: #efede8;
+    --theme-oberflaeche-tief: #e5e2dc;
+    --theme-oberflaeche-hover: #d7d3cb;
+    --theme-text: #1c1b19;
+    --theme-text-sekundaer: #33322e;
+    --theme-text-gedaempft: #52504a;
+    --theme-text-rangliste-grau: #4a5568;
+    --theme-rahmen: #d4d0c8;
+    --theme-rahmen-akzent: #cbd5e1;
+    --theme-akzent-kontrast: #8b0000;
+    --theme-gruen: #047857;
+    --theme-icon-gold: #b45309;
+    --theme-karte-hintergrund: #ffffff;
+    --theme-karte-rahmen: #d4d0c8;
+    --theme-header: #ffffff;
+    --theme-header-border: #d4d0c8;
+    --theme-header-text: #1c1b19;
+    --theme-header-text-sekundaer: #4a5568;
+  }
+
+  :root:has(#theme-toggle:checked) {
+    --theme-hintergrund: #2f2e2b;
+    --theme-oberflaeche: #242321;
+    --theme-oberflaeche-alt: #292725;
+    --theme-oberflaeche-tief: #1c1b19;
+    --theme-oberflaeche-hover: #3a3936;
+    --theme-text: #ffffff;
+    --theme-text-sekundaer: #d7e0ed;
+    --theme-text-gedaempft: #b7b7b7;
+    --theme-text-rangliste-grau: #9aa8b8;
+    --theme-rahmen: #3a3936;
+    --theme-rahmen-akzent: #2d3b55;
+    --theme-akzent-kontrast: #ff6b6b;
+    --theme-gruen: #10b981;
+    --theme-icon-gold: #f5a900;
+    --theme-karte-hintergrund: #262522;
+    --theme-karte-rahmen: #ffffff;
+    --theme-header: #262522;
+    --theme-header-border: #3a3936;
+    --theme-header-text: #ffffff;
+    --theme-header-text-sekundaer: #d7e0ed;
+  }
+}
+
 body {
   margin: 0;
-  background-color: var(--farbe-hintergrund);
-  color: var(--farbe-weiss);
+  background-color: var(--theme-hintergrund);
+  color: var(--theme-text);
   font-family: var(--font-main);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* ==================== Barrierefreiheit ==================== */

@@ -13,10 +13,10 @@
   align-content: center;
   gap: 1rem;
   padding: 1.5rem;
-  border: 2px solid var(--farbe-weiss);
+  border: 2px solid var(--theme-karte-rahmen);
   border-radius: 4px;
-  background-color: var(--farbe-header);
-  color: var(--farbe-weiss);
+  background-color: var(--theme-karte-hintergrund);
+  color: var(--theme-text);
   font-size: clamp(1.25rem, 3vw, 1.75rem);
 }
 
@@ -41,13 +41,15 @@
 
 .kategorie-icon:focus-visible,
 .anmeldung-link:focus-visible {
-  outline: 3px solid var(--farbe-rot-hover);
+  outline: 3px solid var(--theme-akzent-kontrast);
   outline-offset: 4px;
 }
 
 .anmeldung-link {
   display: block;
-  width: 35%;
+  width: fit-content;
+  min-width: min(35%, 100%);
+  max-width: 100%;
   margin-top: 2rem;
   margin-right: auto;
   margin-left: auto;
@@ -58,6 +60,7 @@
   color: var(--farbe-weiss);
   font-size: 1.5rem;
   font-weight: 600;
+  text-align: center;
   text-decoration: none;
 }
 

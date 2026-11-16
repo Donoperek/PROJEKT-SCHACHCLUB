@@ -3,39 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
 
-    <title>Schach lernen | DHBW Schachclub</title>
+    <title>Lernen | DHBW Schachclub</title>
 
     <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- CSS-only Schalter für System-/Dark-/Light-Mode und Sprache -->
+    <input type="checkbox" id="theme-toggle" class="visually-hidden">
+    <input type="radio" name="sprache" id="lang-de" class="visually-hidden" checked>
+    <input type="radio" name="sprache" id="lang-en" class="visually-hidden">
     <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
 
     <header class="site-header">
-        <a href="../index.html" class="logo">
-            <img src="../assets/icons/logo_transparent_weiß.png" alt="DHBW Schachclub Logo">
-        </a>
+        <div class="header-marke">
+            <a href="../index.html" class="logo">
+                <img src="../assets/icons/logo_transparent_weiss.png" alt="Schachclub HDH Logo" class="logo-dark">
+                <img src="../assets/icons/logo_transparent.png" alt="Schachclub HDH Logo" class="logo-light">
+            </a>
+            <h1><span class="titel-schachclub">Schachclub HDH</span></h1>
+        </div>
 
-        <h1>
-            <span class="titel-schachclub">Schachclub</span>
-            <span class="titel-dhbw">DHBW</span>
-        </h1>
+        <div class="header-aktionen">
+            <label for="theme-toggle" class="header-theme-btn">
+                <span class="theme-zu-light">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+                    </svg>
+                    <span>Light Mode</span>
+                </span>
+                <span class="theme-zu-dark">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                    <span>Dark Mode</span>
+                </span>
+            </label>
 
-        <details class="site-menu">
-            <summary class="Menü">Menü</summary>
+            <details class="site-menu">
+                <summary class="Menü">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                    <span>Menü</span>
+                </summary>
+                <nav aria-label="Hauptnavigation">
+                    <ul class="nav-list">
+                        <li><a href="ueber-uns.html">Über uns</a></li>
+                        <li><a href="rangliste.html">Rangliste</a></li>
+                        <li><a href="termine.html">Termine</a></li>
+                        <li><a href="lernen.html">Schach lernen</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                        <li><a href="anmeldung.html">Anmeldung</a></li>
+                    </ul>
+                </nav>
+            </details>
 
-            <nav aria-label="Hauptnavigation">
-                <ul class="nav-list">
-                    <li><a href="ueber-uns.html">Über uns</a></li>
-                    <li><a href="rangliste.html">Rangliste</a></li>
-                    <li><a href="termine.html">Termine</a></li>
-                    <li><a href="schachlernen.html">Schach lernen</a></li>
-                    <li><a href="anmeldung.html">Anmeldung</a></li>
-                </ul>
-            </nav>
-        </details>
+            <div class="header-sprache" role="group" aria-label="Sprache wählen">
+                <label for="lang-de" class="sprache-option sprache-de">Deutsch</label>
+                <span class="sprache-trenner" aria-hidden="true">/</span>
+                <label for="lang-en" class="sprache-option sprache-en">English</label>
+            </div>
+        </div>
     </header>
+    <p class="sprache-hinweis" role="status">
+        English version coming soon – this student project is currently available in German.
+    </p>
 
     <aside class="projekt-hinweis" aria-label="Hinweis zum Projekt">
         Hinweis: Dies ist ein fiktives Websiteprojekt im Rahmen der
@@ -125,7 +162,7 @@
                             <div class="brett-feld feld-hell zug-ortho zug-koenig"><span class="zug-punkt" aria-hidden="true"></span></div>
                             <div class="brett-feld feld-dunkel zug-ortho"><span class="zug-punkt" aria-hidden="true"></span></div>
                             <div class="brett-feld feld-hell zug-ortho"><span class="zug-punkt" aria-hidden="true"></span></div>
-                            <div class="brett-feld feld-dunkel ziel-turm"><span class="schlag-ziel ziel-gegner" aria-hidden="true">&#9823;</span></div>
+                            <div class="brett-feld feld-dunkel ziel-turm ziel-dame"><span class="schlag-ziel ziel-gegner" aria-hidden="true">&#9823;</span></div>
 
                             <!-- Reihe 3 -->
                             <div class="brett-feld feld-dunkel"></div>
@@ -202,11 +239,12 @@
                             </div>
                             <p>
                                 Der König ist die wichtigste Figur auf dem Brett: Wird er mattgesetzt, endet die Partie.
-                                Er zieht immer genau <strong>ein Feld</strong> in beliebige Richtung (waagerecht, senkrecht oder diagonal).
+                                Er zieht genau <strong>ein Feld</strong> in beliebige Richtung (waagerecht, senkrecht oder diagonal).
                             </p>
                             <ul class="figur-merkmale">
+                                <li><strong>Wert:</strong> Unbezahlbar (Verlust durch Schachmatt beendet die Partie).</li>
                                 <li><strong>Schlagen:</strong> Schlägt jede ungedeckte gegnerische Figur auf einem angrenzenden Feld (z. B. auf e5).</li>
-                                <li><strong>Wichtig:</strong> Der König darf niemals auf ein Feld ziehen, das von einer gegnerischen Figur bedroht wird (Sonderzug: Rochade).</li>
+                                <li><strong>Besonderheit:</strong> Darf niemals auf ein bedrohtes Feld ziehen; kann einmal pro Partie zusammen mit einem Turm rochieren (Rochade).</li>
                             </ul>
                         </article>
 
@@ -216,12 +254,13 @@
                                 <span class="figur-icon-badge figur-weiss" aria-hidden="true">&#9819;</span>
                             </div>
                             <p>
-                                Die Dame ist die stärkste Figur (ca. <strong>9 Bauerneinheiten</strong>). Sie vereint Turm und Läufer
-                                und zieht beliebig weit waagerecht, senkrecht oder diagonal über freie Felder.
+                                Die Dame ist die stärkste Figur auf dem Brett. Sie vereint Turm und Läufer und zieht
+                                beliebig weit waagerecht, senkrecht oder diagonal über freie Felder.
                             </p>
                             <ul class="figur-merkmale">
-                                <li><strong>Schlagen:</strong> Kann die erste gegnerische Figur auf einer freien Linie, Reihe oder Diagonale schlagen (z. B. d8 oder h8).</li>
-                                <li><strong>Einschränkung:</strong> Sie darf keine eigenen oder fremden Figuren überspringen.</li>
+                                <li><strong>Wert:</strong> 9 Punkte (Bauerneinheiten).</li>
+                                <li><strong>Schlagen:</strong> Schlägt die erste gegnerische Figur auf einer freien Linie, Reihe oder Diagonale (z. B. auf d8, h4 oder h8).</li>
+                                <li><strong>Besonderheit:</strong> Darf keine Figuren überspringen und kann durch Bauernumwandlung mehrfach auf dem Brett stehen.</li>
                             </ul>
                         </article>
 
@@ -231,12 +270,13 @@
                                 <span class="figur-icon-badge figur-weiss" aria-hidden="true">&#9820;</span>
                             </div>
                             <p>
-                                Der Turm zieht beliebig viele freie Felder <strong>geradeaus</strong> – also senkrecht entlang
-                                von Linien oder waagerecht entlang von Reihen.
+                                Der Turm ist eine starke Figur für offene Linien und das Endspiel. Er zieht beliebig
+                                viele freie Felder <strong>geradeaus</strong> – senkrecht entlang von Linien oder waagerecht entlang von Reihen.
                             </p>
                             <ul class="figur-merkmale">
-                                <li><strong>Schlagen:</strong> Schlägt eine gegnerische Figur auf seiner Linie oder Reihe (z. B. auf d8 oder h4) und bleibt auf deren Feld stehen.</li>
-                                <li><strong>Wert:</strong> 5 Punkte (wichtig auf offenen Linien und für die Rochade).</li>
+                                <li><strong>Wert:</strong> 5 Punkte (Bauerneinheiten).</li>
+                                <li><strong>Schlagen:</strong> Schlägt die erste gegnerische Figur auf seiner freien Linie oder Reihe (z. B. auf d8 oder h4).</li>
+                                <li><strong>Besonderheit:</strong> Darf keine Figuren überspringen und ist gemeinsam mit dem König an der Rochade beteiligt.</li>
                             </ul>
                         </article>
 
@@ -246,12 +286,13 @@
                                 <span class="figur-icon-badge figur-weiss" aria-hidden="true">&#9821;</span>
                             </div>
                             <p>
-                                Der Läufer zieht beliebig weit <strong>diagonal</strong>. Da ein Läufer nie seine Feldfarbe
-                                wechselt, hat jeder Spieler einen weißfeldrigen und einen schwarzfeldrigen Läufer.
+                                Der Läufer zieht beliebig weit <strong>diagonal</strong> über freie Felder. Da er immer
+                                auf derselben Feldfarbe bleibt, gibt es einen weißfeldrigen und einen schwarzfeldrigen Läufer.
                             </p>
                             <ul class="figur-merkmale">
+                                <li><strong>Wert:</strong> 3 Punkte (Bauerneinheiten).</li>
                                 <li><strong>Schlagen:</strong> Schlägt die erste gegnerische Figur auf seiner freien Diagonale (z. B. auf h8).</li>
-                                <li><strong>Wert:</strong> 3 Punkte (im Läuferpaar besonders stark).</li>
+                                <li><strong>Besonderheit:</strong> Kann seine Feldfarbe nie wechseln und keine Figuren überspringen; im Läuferpaar besonders stark.</li>
                             </ul>
                         </article>
 
@@ -262,11 +303,12 @@
                             </div>
                             <p>
                                 Der Springer zieht in einer <strong>L-Form</strong> (zwei Felder in eine Richtung und ein Feld
-                                im rechten Winkel dazu). Als <strong>einzige Figur</strong> darf er andere Figuren überspringen!
+                                im rechten Winkel dazu). Dadurch kontrolliert er besonders gut das Zentrum.
                             </p>
                             <ul class="figur-merkmale">
-                                <li><strong>Schlagen:</strong> Schlägt nur eine gegnerische Figur auf dem exakten Zielfeld seines L-Sprungs (hier auf e6), niemals Figuren auf den übersprungenen Feldern.</li>
-                                <li><strong>Wert:</strong> 3 Punkte (wechselt bei jedem Sprung die Feldfarbe).</li>
+                                <li><strong>Wert:</strong> 3 Punkte (Bauerneinheiten).</li>
+                                <li><strong>Schlagen:</strong> Schlägt eine gegnerische Figur ausschließlich auf dem Zielfeld seines L-Sprungs (z. B. auf e6).</li>
+                                <li><strong>Besonderheit:</strong> Darf als einzige Figur eigene und fremde Figuren überspringen und wechselt bei jedem Zug die Feldfarbe.</li>
                             </ul>
                         </article>
 
@@ -276,12 +318,13 @@
                                 <span class="figur-icon-badge figur-weiss" aria-hidden="true">&#9823;</span>
                             </div>
                             <p>
-                                Der Bauer zieht ausschließlich <strong>vorwärts Richtung gegnerische Grundreihe</strong> – regulär ein
-                                Feld geradeaus (auf d5), von seinem Startfeld auch wahlweise zwei Felder.
+                                Der Bauer bildet das Grundgerüst der Stellung und zieht ausschließlich <strong>vorwärts</strong>
+                                Richtung gegnerische Grundreihe – regulär ein Feld geradeaus (auf d5).
                             </p>
                             <ul class="figur-merkmale">
-                                <li><strong>Schlagen:</strong> Schlägt anders als er zieht! Immer <strong>ein Feld diagonal vorwärts</strong> (hier auf c5 oder e5) – niemals geradeaus.</li>
-                                <li><strong>Umwandlung:</strong> Erreicht er die letzte Reihe, wird er zur Dame, Turm, Läufer oder Springer (Wert: 1 Punkt; Sonderzug: En passant).</li>
+                                <li><strong>Wert:</strong> 1 Punkt (Basiseinheit).</li>
+                                <li><strong>Schlagen:</strong> Schlägt anders als er zieht: immer <strong>ein Feld diagonal vorwärts</strong> (z. B. auf c5 oder e5), niemals geradeaus.</li>
+                                <li><strong>Besonderheit:</strong> Darf vom Startfeld zwei Felder vorrücken, <em>En passant</em> schlagen und sich auf der letzten Reihe umwandeln.</li>
                             </ul>
                         </article>
                     </div>
@@ -396,25 +439,25 @@
                 </div>
             </section>
 
-            <!-- ==================== Bereich 3: Weiterlernen & Links ==================== -->
+            <!-- ==================== Bereich 3: Externe Lernressourcen ==================== -->
             <section class="lernen-links-bereich" aria-labelledby="lernen-links-titel">
-                <h3 id="lernen-links-titel" class="lernen-abschnitt-titel">Weiterlernen &amp; Mitspielen</h3>
+                <h3 id="lernen-links-titel" class="lernen-abschnitt-titel">Weiterlernen mit externen Ressourcen</h3>
                 <ul class="lernen-linkliste">
                     <li>
-                        <a href="termine.html" class="recht-link">Trainingsabende &amp; Eröffnungs-Workshops ansehen</a>
-                        <span>– Komm mittwochs ab 18:00 Uhr in Hörsaal 214 vorbei und probiere dein Wissen direkt am Brett aus.</span>
+                        <a href="https://www.chess.com/de/schachregeln  " class="recht-link" target="_blank" rel="noopener noreferrer">Chess.com: Schachregeln verstehen</a>
+                        <span>(Deutsch & Englisch) Kompakte Übersicht zu Brettaufbau, Figurenbewegungen, Sonderzügen und Spielziel.</span>
                     </li>
                     <li>
-                        <a href="anmeldung.html#schnuppern-titel" class="recht-link">Unverbindlich zum Schnuppertraining vorbeikommen</a>
-                        <span>– Ohne Anmeldung, Bretter und Uhren stehen am Campus bereit.</span>
+                        <a href="https://www.youtube.com/watch?v=OCSbzArwB10" class="recht-link" target="_blank" rel="noopener noreferrer">GothamChess: How To Play Chess (YouTube)</a>
+                        <span>(Englisch) – Einsteiger-Guide zu den Grundregeln, Figuren und ersten Eröffnungsprinzipien.</span>
                     </li>
                     <li>
-                        <a href="kontakt.html" class="recht-link">Nils (Ansprechpartner für Neumitglieder) fragen</a>
-                        <span>– Wenn du dir unsicher bei Regeln bist oder Begleitung beim Einstieg suchst.</span>
+                        <a href="https://www.youtube.com/watch?v=YzSgLjmEV4c" class="recht-link" target="_blank" rel="noopener noreferrer">The Big Greek: Die goldenen Schachregeln (YouTube)</a>
+                        <span>(Deutsch) – Einführung in wichtige Grundprinzipien für die Eröffnung und sicheres Spiel.</span>
                     </li>
                     <li>
-                        <a href="rangliste.html" class="recht-link">Aktuelle Standard- und Blitz-Elo-Rangliste ansehen</a>
-                        <span>– Schau dir an, wer an der DHBW Heidenheim aktuell an den Brettern führt.</span>
+                        <a href="https://www.youtube.com/show/VLPLXoFpqP9YfB0JfdJEvTJqY71LFYapG9FF?sbp=KgtIeHprWk9raHNfRUAB" class="recht-link" target="_blank" rel="noopener noreferrer">The Big Greek: Videoreihe „Schach lernen“ (YouTube)</a>
+                        <span>(Deutsch) – Strukturierte Videoserie von den Grundlagen bis zu ersten Taktiken.</span>
                     </li>
                 </ul>
             </section>
